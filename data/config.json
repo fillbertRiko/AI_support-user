@@ -1,0 +1,27 @@
+{
+    "api_keys": {
+        "openweathermap": "",
+        "newsapi": ""
+    },
+    "app_settings": {
+        "window_width": 620,
+        "window_height": 720,
+        "update_interval": {
+            "weather": 1800,
+            "news": 3600,
+            "reminders": 300
+        },
+        "cache_duration": {
+            "weather": 1800,
+            "news": 3600
+        }
+    },
+    "database": {
+        "path": "data/database/greeting.db",
+        "max_connections": 5
+    },
+    "logging": {
+        "level": "INFO",
+        "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    }
+}

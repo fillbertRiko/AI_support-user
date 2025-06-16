@@ -1,0 +1,756 @@
+2025-06-16 21:16:38,721 - __main__ - DEBUG - Bắt đầu khởi tạo MainWindow...
+2025-06-16 21:16:38,735 - DatabaseManager - INFO - App launch time logged.
+2025-06-16 21:16:38,735 - __main__ - DEBUG - Khởi tạo các service...
+2025-06-16 21:16:38,735 - __main__ - DEBUG - Thiết lập cửa sổ chính...
+2025-06-16 21:16:38,759 - __main__ - DEBUG - Tạo main frame...
+2025-06-16 21:16:38,781 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame...
+2025-06-16 21:16:38,788 - views.components.greeting_frame - DEBUG - Cập nhật lời chào và thời gian lần đầu...
+2025-06-16 21:16:38,788 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-16 21:16:38,789 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:16:38
+2025-06-16 21:16:38,789 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-16 21:16:38,789 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame hoàn tất.
+2025-06-16 21:16:38,829 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
+2025-06-16 21:16:39,208 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Hanoi%2CVN&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi HTTP/1.1" 200 512
+2025-06-16 21:16:39,208 - DatabaseManager - INFO - Weather data saved successfully.
+2025-06-16 21:16:39,209 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết từ WeatherService: {'temperature': 26, 'feels_like': 26, 'humidity': 87, 'pressure': 1005, 'description': 'mây đen u ám', 'icon': '04n', 'wind_speed': 2.99, 'clouds': 100, 'timestamp': 1750083399.208584}
+2025-06-16 21:16:39,209 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết nhận được: {'temperature': 26, 'feels_like': 26, 'humidity': 87, 'pressure': 1005, 'description': 'mây đen u ám', 'icon': '04n', 'wind_speed': 2.99, 'clouds': 100, 'timestamp': 1750083399.208584}
+2025-06-16 21:16:39,210 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): openweathermap.org:443
+2025-06-16 21:16:40,243 - urllib3.connectionpool - DEBUG - https://openweathermap.org:443 "GET /img/wn/04n@2x.png HTTP/1.1" 200 1869
+2025-06-16 21:16:40,271 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-06-16 21:16:40,272 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 41 1812
+2025-06-16 21:16:40,275 - views.components.weather_frame - INFO - Đã tải và lưu biểu tượng 04n.png vào views/assets/weather_icons\04n.png
+2025-06-16 21:16:40,289 - views.components.weather_frame - DEBUG - Cập nhật thông tin hàng đầu thành công.
+2025-06-16 21:16:40,292 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-06-16 21:16:40,292 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 41 1741
+2025-06-16 21:16:40,294 - views.components.weather_frame - DEBUG - Cập nhật biểu tượng thời tiết thành công.
+2025-06-16 21:16:40,295 - views.components.weather_frame - DEBUG - Cập nhật labels chính thành công.
+2025-06-16 21:16:40,296 - views.components.weather_frame - DEBUG - Cập nhật metrics thành công.
+2025-06-16 21:16:40,296 - views.components.weather_frame - DEBUG - Cập nhật mô tả dự báo hàng ngày thành công.
+2025-06-16 21:16:40,297 - views.components.weather_frame - INFO - Cập nhật thời tiết thành công.
+2025-06-16 21:16:40,562 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:16:40
+2025-06-16 21:16:41,562 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:16:41
+2025-06-16 21:16:42,576 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:16:42
+2025-06-16 21:16:43,588 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:16:43
+2025-06-16 21:16:44,591 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:16:44
+2025-06-16 21:16:45,605 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:16:45
+2025-06-16 21:16:46,618 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:16:46
+2025-06-16 21:16:47,629 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:16:47
+2025-06-16 21:16:48,631 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:16:48
+2025-06-16 21:16:49,637 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:16:49
+2025-06-16 21:16:50,651 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:16:50
+2025-06-16 21:16:51,657 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:16:51
+2025-06-16 21:16:52,669 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:16:52
+2025-06-16 21:16:53,680 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:16:53
+2025-06-16 21:16:54,684 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:16:54
+2025-06-16 21:16:55,685 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:16:55
+2025-06-16 21:16:56,693 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:16:56
+2025-06-16 21:16:57,704 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:16:57
+2025-06-16 21:16:58,719 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:16:58
+2025-06-16 21:16:59,735 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:16:59
+2025-06-16 21:17:00,736 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:17:00
+2025-06-16 21:17:01,746 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:17:01
+2025-06-16 21:17:02,751 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:17:02
+2025-06-16 21:17:03,765 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:17:03
+2025-06-16 21:17:04,778 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:17:04
+2025-06-16 21:17:05,783 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:17:05
+2025-06-16 21:17:06,798 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:17:06
+2025-06-16 21:17:07,805 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:17:07
+2025-06-16 21:17:08,807 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:17:08
+2025-06-16 21:17:09,815 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:17:09
+2025-06-16 21:17:10,828 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:17:10
+2025-06-16 21:17:11,840 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:17:11
+2025-06-16 21:17:12,861 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:17:12
+2025-06-16 21:17:13,877 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:17:13
+2025-06-16 21:17:14,888 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:17:14
+2025-06-16 21:17:15,889 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:17:15
+2025-06-16 21:17:16,902 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:17:16
+2025-06-16 21:17:17,905 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:17:17
+2025-06-16 21:17:18,917 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:17:18
+2025-06-16 21:17:19,924 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:17:19
+2025-06-16 21:17:20,938 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:17:20
+2025-06-16 21:17:21,952 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:17:21
+2025-06-16 21:17:22,955 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:17:22
+2025-06-16 21:17:23,958 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:17:23
+2025-06-16 21:17:24,969 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:17:24
+2025-06-16 21:17:25,982 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:17:25
+2025-06-16 21:17:26,986 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:17:26
+2025-06-16 21:19:55,382 - __main__ - DEBUG - Bắt đầu khởi tạo MainWindow...
+2025-06-16 21:19:55,391 - DatabaseManager - INFO - App launch time logged.
+2025-06-16 21:19:55,391 - __main__ - DEBUG - Khởi tạo các service...
+2025-06-16 21:19:55,392 - __main__ - DEBUG - Thiết lập cửa sổ chính...
+2025-06-16 21:19:55,438 - __main__ - DEBUG - Tạo main frame...
+2025-06-16 21:19:55,459 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame...
+2025-06-16 21:19:55,471 - views.components.greeting_frame - DEBUG - Cập nhật lời chào và thời gian lần đầu...
+2025-06-16 21:19:55,472 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-16 21:19:55,472 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:19:55
+2025-06-16 21:19:55,473 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-16 21:19:55,473 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame hoàn tất.
+2025-06-16 21:19:55,527 - __main__ - ERROR - Lỗi khởi tạo MainWindow: 'WeatherFrame' object has no attribute 'metric_values'
+2025-06-16 21:19:56,486 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:19:56
+2025-06-16 21:19:57,501 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:19:57
+2025-06-16 21:19:58,514 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:19:58
+2025-06-16 21:19:59,523 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:19:59
+2025-06-16 21:20:00,533 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:20:00
+2025-06-16 21:20:01,539 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:20:01
+2025-06-16 21:20:02,540 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:20:02
+2025-06-16 21:20:41,347 - __main__ - DEBUG - Bắt đầu khởi tạo MainWindow...
+2025-06-16 21:20:41,352 - DatabaseManager - INFO - App launch time logged.
+2025-06-16 21:20:41,353 - __main__ - DEBUG - Khởi tạo các service...
+2025-06-16 21:20:41,353 - __main__ - DEBUG - Thiết lập cửa sổ chính...
+2025-06-16 21:20:41,383 - __main__ - DEBUG - Tạo main frame...
+2025-06-16 21:20:41,401 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame...
+2025-06-16 21:20:41,408 - views.components.greeting_frame - DEBUG - Cập nhật lời chào và thời gian lần đầu...
+2025-06-16 21:20:41,409 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-16 21:20:41,409 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:20:41
+2025-06-16 21:20:41,410 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-16 21:20:41,410 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame hoàn tất.
+2025-06-16 21:20:41,446 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
+2025-06-16 21:20:41,823 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Hanoi%2CVN&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi HTTP/1.1" 200 512
+2025-06-16 21:20:41,824 - DatabaseManager - INFO - Weather data saved successfully.
+2025-06-16 21:20:41,824 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết từ WeatherService: {'temperature': 26, 'feels_like': 26, 'humidity': 87, 'pressure': 1005, 'description': 'mây đen u ám', 'icon': '04n', 'wind_speed': 2.99, 'clouds': 100, 'timestamp': 1750083641.82439}
+2025-06-16 21:20:41,824 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết nhận được: {'temperature': 26, 'feels_like': 26, 'humidity': 87, 'pressure': 1005, 'description': 'mây đen u ám', 'icon': '04n', 'wind_speed': 2.99, 'clouds': 100, 'timestamp': 1750083641.82439}
+2025-06-16 21:20:41,842 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-06-16 21:20:41,842 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 41 1741
+2025-06-16 21:20:41,851 - views.components.weather_frame - DEBUG - Cập nhật thông tin hàng đầu thành công.
+2025-06-16 21:20:41,852 - views.components.weather_frame - DEBUG - Cập nhật labels chính thành công.
+2025-06-16 21:20:41,852 - views.components.weather_frame - DEBUG - Cập nhật metrics thành công.
+2025-06-16 21:20:41,853 - views.components.weather_frame - DEBUG - Cập nhật mô tả dự báo hàng ngày thành công.
+2025-06-16 21:20:42,421 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:20:42
+2025-06-16 21:20:43,423 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:20:43
+2025-06-16 21:20:44,427 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:20:44
+2025-06-16 21:20:45,429 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:20:45
+2025-06-16 21:20:46,436 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:20:46
+2025-06-16 21:20:47,451 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:20:47
+2025-06-16 21:20:48,453 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:20:48
+2025-06-16 21:20:49,465 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:20:49
+2025-06-16 21:20:50,466 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:20:50
+2025-06-16 21:20:51,474 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:20:51
+2025-06-16 21:20:52,478 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:20:52
+2025-06-16 21:20:53,490 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:20:53
+2025-06-16 21:20:54,502 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:20:54
+2025-06-16 21:20:55,506 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:20:55
+2025-06-16 21:20:56,517 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:20:56
+2025-06-16 21:20:57,530 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:20:57
+2025-06-16 21:20:58,546 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:20:58
+2025-06-16 21:20:59,560 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:20:59
+2025-06-16 21:21:00,562 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:21:00
+2025-06-16 21:21:01,573 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:21:01
+2025-06-16 21:21:02,588 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:21:02
+2025-06-16 21:21:03,592 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:21:03
+2025-06-16 21:21:04,603 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:21:04
+2025-06-16 21:21:05,605 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:21:05
+2025-06-16 21:21:06,618 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:21:06
+2025-06-16 21:21:07,634 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:21:07
+2025-06-16 21:21:08,643 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:21:08
+2025-06-16 21:21:09,646 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:21:09
+2025-06-16 21:21:10,648 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:21:10
+2025-06-16 21:21:11,651 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:21:11
+2025-06-16 21:21:12,663 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:21:12
+2025-06-16 21:21:13,680 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:21:13
+2025-06-16 21:21:14,695 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:21:14
+2025-06-16 21:21:15,696 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:21:15
+2025-06-16 21:21:16,709 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:21:16
+2025-06-16 21:21:17,710 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:21:17
+2025-06-16 21:21:18,722 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:21:18
+2025-06-16 21:21:19,736 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:21:19
+2025-06-16 21:21:20,749 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:21:20
+2025-06-16 21:21:21,763 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:21:21
+2025-06-16 21:21:22,777 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:21:22
+2025-06-16 21:21:23,794 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:21:23
+2025-06-16 21:21:24,802 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:21:24
+2025-06-16 21:21:25,814 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:21:25
+2025-06-16 21:21:26,829 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:21:26
+2025-06-16 21:21:27,832 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:21:27
+2025-06-16 21:22:50,004 - __main__ - DEBUG - Bắt đầu khởi tạo MainWindow...
+2025-06-16 21:22:50,009 - DatabaseManager - INFO - App launch time logged.
+2025-06-16 21:22:50,010 - __main__ - DEBUG - Khởi tạo các service...
+2025-06-16 21:22:50,010 - __main__ - DEBUG - Thiết lập cửa sổ chính...
+2025-06-16 21:22:50,044 - __main__ - DEBUG - Tạo main frame...
+2025-06-16 21:22:50,065 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame...
+2025-06-16 21:22:50,074 - views.components.greeting_frame - DEBUG - Cập nhật lời chào và thời gian lần đầu...
+2025-06-16 21:22:50,074 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-16 21:22:50,075 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:22:50
+2025-06-16 21:22:50,076 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-16 21:22:50,076 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame hoàn tất.
+2025-06-16 21:22:50,123 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
+2025-06-16 21:22:50,500 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Hanoi%2CVN&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi HTTP/1.1" 200 512
+2025-06-16 21:22:50,501 - DatabaseManager - INFO - Weather data saved successfully.
+2025-06-16 21:22:50,501 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết từ WeatherService: {'temperature': 26, 'feels_like': 26, 'humidity': 87, 'pressure': 1005, 'description': 'mây đen u ám', 'icon': '04n', 'wind_speed': 2.99, 'clouds': 100, 'timestamp': 1750083770.500989}
+2025-06-16 21:22:50,501 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết nhận được: {'temperature': 26, 'feels_like': 26, 'humidity': 87, 'pressure': 1005, 'description': 'mây đen u ám', 'icon': '04n', 'wind_speed': 2.99, 'clouds': 100, 'timestamp': 1750083770.500989}
+2025-06-16 21:22:50,520 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-06-16 21:22:50,520 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 41 1741
+2025-06-16 21:22:50,530 - views.components.weather_frame - DEBUG - Cập nhật thông tin hàng đầu thành công.
+2025-06-16 21:22:50,531 - views.components.weather_frame - DEBUG - Cập nhật labels chính thành công.
+2025-06-16 21:22:50,531 - views.components.weather_frame - DEBUG - Cập nhật metrics thành công.
+2025-06-16 21:22:50,532 - views.components.weather_frame - DEBUG - Cập nhật mô tả dự báo hàng ngày thành công.
+2025-06-16 21:22:51,098 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:22:51
+2025-06-16 21:22:52,099 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:22:52
+2025-06-16 21:22:53,100 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:22:53
+2025-06-16 21:22:54,110 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:22:54
+2025-06-16 21:22:55,115 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:22:55
+2025-06-16 21:22:56,131 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:22:56
+2025-06-16 21:22:57,133 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:22:57
+2025-06-16 21:22:58,146 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:22:58
+2025-06-16 21:22:59,150 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:22:59
+2025-06-16 21:23:00,155 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:23:00
+2025-06-16 21:23:01,168 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:23:01
+2025-06-16 21:23:02,186 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:23:02
+2025-06-16 21:23:03,202 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:23:03
+2025-06-16 21:23:04,203 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:23:04
+2025-06-16 21:23:05,210 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:23:05
+2025-06-16 21:23:06,220 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:23:06
+2025-06-16 21:23:07,233 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:23:07
+2025-06-16 21:23:08,247 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:23:08
+2025-06-16 21:23:09,261 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:23:09
+2025-06-16 21:23:10,262 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:23:10
+2025-06-16 21:23:11,273 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:23:11
+2025-06-16 21:23:12,287 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:23:12
+2025-06-16 21:23:13,300 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:23:13
+2025-06-16 21:23:14,306 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:23:14
+2025-06-16 21:23:15,313 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:23:15
+2025-06-16 21:23:16,324 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:23:16
+2025-06-16 21:23:17,325 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:23:17
+2025-06-16 21:23:18,338 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:23:18
+2025-06-16 21:23:19,352 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:23:19
+2025-06-16 21:23:20,355 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:23:20
+2025-06-16 21:23:21,360 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:23:21
+2025-06-16 21:36:40,622 - __main__ - DEBUG - Bắt đầu khởi tạo MainWindow...
+2025-06-16 21:36:40,631 - DatabaseManager - INFO - App launch time logged.
+2025-06-16 21:36:40,631 - __main__ - DEBUG - Khởi tạo các service và controller...
+2025-06-16 21:36:40,632 - models.knowledge_base - INFO - Knowledge base file not found or error occurred. Loading default rules.
+2025-06-16 21:36:40,634 - models.knowledge_base - INFO - Rules saved to H:\my_ai\models\knowledge_base.json.
+2025-06-16 21:36:40,634 - models.knowledge_base - INFO - Loaded 3 default rules and saved to file.
+2025-06-16 21:36:40,634 - controllers.inference_engine - INFO - Inference Engine initialized.
+2025-06-16 21:36:40,635 - __main__ - DEBUG - Thiết lập cửa sổ chính...
+2025-06-16 21:36:40,677 - __main__ - DEBUG - Tạo main frame...
+2025-06-16 21:36:40,698 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame...
+2025-06-16 21:36:40,706 - views.components.greeting_frame - DEBUG - Cập nhật lời chào và thời gian lần đầu...
+2025-06-16 21:36:40,707 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-16 21:36:40,707 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:36:40
+2025-06-16 21:36:40,708 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-16 21:36:40,708 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame hoàn tất.
+2025-06-16 21:36:40,741 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
+2025-06-16 21:36:41,044 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Hanoi%2CVN&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi HTTP/1.1" 200 511
+2025-06-16 21:36:41,044 - DatabaseManager - INFO - Weather data saved successfully.
+2025-06-16 21:36:41,045 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết từ WeatherService: {'temperature': 26, 'feels_like': 26, 'humidity': 88, 'pressure': 1005, 'description': 'mây đen u ám', 'icon': '04n', 'wind_speed': 4.26, 'clouds': 100, 'timestamp': 1750084601.044672}
+2025-06-16 21:36:41,045 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết nhận được: {'temperature': 26, 'feels_like': 26, 'humidity': 88, 'pressure': 1005, 'description': 'mây đen u ám', 'icon': '04n', 'wind_speed': 4.26, 'clouds': 100, 'timestamp': 1750084601.044672}
+2025-06-16 21:36:41,060 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-06-16 21:36:41,060 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 41 1741
+2025-06-16 21:36:41,068 - views.components.weather_frame - DEBUG - Cập nhật thông tin hàng đầu thành công.
+2025-06-16 21:36:41,069 - views.components.weather_frame - DEBUG - Cập nhật labels chính thành công.
+2025-06-16 21:36:41,070 - views.components.weather_frame - DEBUG - Cập nhật metrics thành công.
+2025-06-16 21:36:41,070 - views.components.weather_frame - DEBUG - Cập nhật mô tả dự báo hàng ngày thành công.
+2025-06-16 21:36:41,310 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
+2025-06-16 21:36:41,509 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Hanoi%2CVN&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi HTTP/1.1" 200 511
+2025-06-16 21:36:41,510 - DatabaseManager - INFO - Weather data saved successfully.
+2025-06-16 21:36:41,512 - __main__ - DEBUG - Collected facts for inference: {'time_category': 'evening', 'day_of_week': 'Monday', 'weather_condition': 'mây đen u ám', 'schedule_empty_or_flexible': True, 'vscode_status': 'closed'}
+2025-06-16 21:36:41,512 - controllers.inference_engine - INFO - Running inference with facts: {'time_category': 'evening', 'day_of_week': 'Monday', 'weather_condition': 'mây đen u ám', 'schedule_empty_or_flexible': True, 'vscode_status': 'closed'}
+2025-06-16 21:36:41,512 - controllers.inference_engine - DEBUG - Condition for rule 'rule_1_rainy_gym' (Fact: weather_condition, Op: ==, Val: mưa) not met with actual fact: mây đen u ám.
+2025-06-16 21:36:41,512 - controllers.inference_engine - DEBUG - Condition for rule 'rule_2_work_vscode' (Fact: time_category, Op: ==, Val: work_hours) not met with actual fact: evening.
+2025-06-16 21:36:41,513 - controllers.inference_engine - DEBUG - Condition for rule 'rule_3_weekend_relax' (Fact: day_of_week, Op: in, Val: ['Thứ Bảy', 'Chủ Nhật']) not met with actual fact: Monday.
+2025-06-16 21:36:41,513 - controllers.inference_engine - INFO - Inference completed. Activated 0 actions.
+2025-06-16 21:36:41,856 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:36:41
+2025-06-16 21:36:42,857 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:36:42
+2025-06-16 21:36:43,860 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:36:43
+2025-06-16 21:36:44,869 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:36:44
+2025-06-16 21:36:45,882 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:36:45
+2025-06-16 21:36:46,898 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:36:46
+2025-06-16 21:36:47,907 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:36:47
+2025-06-16 21:36:48,907 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:36:48
+2025-06-16 21:36:49,908 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:36:49
+2025-06-16 21:36:50,909 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:36:50
+2025-06-16 21:36:51,925 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:36:51
+2025-06-16 21:36:52,929 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:36:52
+2025-06-16 21:36:53,931 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:36:53
+2025-06-16 21:36:54,944 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:36:54
+2025-06-16 21:36:55,950 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:36:55
+2025-06-16 21:36:56,955 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:36:56
+2025-06-16 21:36:57,970 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:36:57
+2025-06-16 21:36:58,983 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:36:58
+2025-06-16 21:36:59,985 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:36:59
+2025-06-16 21:37:01,000 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:37:00
+2025-06-16 21:37:02,002 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:37:02
+2025-06-16 21:37:03,017 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:37:03
+2025-06-16 21:37:04,029 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:37:04
+2025-06-16 21:37:05,031 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:37:05
+2025-06-16 21:37:06,040 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:37:06
+2025-06-16 21:37:07,042 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:37:07
+2025-06-16 21:37:08,045 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:37:08
+2025-06-16 21:37:09,061 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:37:09
+2025-06-16 21:37:10,072 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:37:10
+2025-06-16 21:37:11,075 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:37:11
+2025-06-16 21:37:12,077 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:37:12
+2025-06-16 21:37:13,088 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:37:13
+2025-06-16 21:37:14,103 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:37:14
+2025-06-16 21:37:47,768 - __main__ - DEBUG - Bắt đầu khởi tạo MainWindow...
+2025-06-16 21:37:47,776 - DatabaseManager - INFO - App launch time logged.
+2025-06-16 21:37:47,777 - __main__ - DEBUG - Khởi tạo các service và controller...
+2025-06-16 21:37:47,778 - models.knowledge_base - INFO - Loaded 3 rules from H:\my_ai\models\knowledge_base.json.
+2025-06-16 21:37:47,778 - controllers.inference_engine - INFO - Inference Engine initialized.
+2025-06-16 21:37:47,778 - __main__ - DEBUG - Thiết lập cửa sổ chính...
+2025-06-16 21:37:47,802 - __main__ - DEBUG - Tạo main frame...
+2025-06-16 21:37:47,823 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame...
+2025-06-16 21:37:47,832 - views.components.greeting_frame - DEBUG - Cập nhật lời chào và thời gian lần đầu...
+2025-06-16 21:37:47,833 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-16 21:37:47,833 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:37:47
+2025-06-16 21:37:47,834 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-16 21:37:47,834 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame hoàn tất.
+2025-06-16 21:37:47,879 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
+2025-06-16 21:37:48,163 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Hanoi%2CVN&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi HTTP/1.1" 200 511
+2025-06-16 21:37:48,164 - DatabaseManager - INFO - Weather data saved successfully.
+2025-06-16 21:37:48,164 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết từ WeatherService: {'temperature': 26, 'feels_like': 26, 'humidity': 88, 'pressure': 1005, 'description': 'mây đen u ám', 'icon': '04n', 'wind_speed': 4.26, 'clouds': 100, 'timestamp': 1750084668.163918}
+2025-06-16 21:37:48,164 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết nhận được: {'temperature': 26, 'feels_like': 26, 'humidity': 88, 'pressure': 1005, 'description': 'mây đen u ám', 'icon': '04n', 'wind_speed': 4.26, 'clouds': 100, 'timestamp': 1750084668.163918}
+2025-06-16 21:37:48,184 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-06-16 21:37:48,184 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 41 1741
+2025-06-16 21:37:48,193 - views.components.weather_frame - DEBUG - Cập nhật thông tin hàng đầu thành công.
+2025-06-16 21:37:48,193 - views.components.weather_frame - DEBUG - Cập nhật labels chính thành công.
+2025-06-16 21:37:48,194 - views.components.weather_frame - DEBUG - Cập nhật metrics thành công.
+2025-06-16 21:37:48,194 - views.components.weather_frame - DEBUG - Cập nhật mô tả dự báo hàng ngày thành công.
+2025-06-16 21:37:48,447 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
+2025-06-16 21:37:48,616 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Hanoi%2CVN&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi HTTP/1.1" 200 511
+2025-06-16 21:37:48,617 - DatabaseManager - INFO - Weather data saved successfully.
+2025-06-16 21:37:48,618 - __main__ - DEBUG - Collected facts for inference: {'time_category': 'evening', 'day_of_week': 'Monday', 'weather_condition': 'mây đen u ám', 'schedule_empty_or_flexible': True, 'vscode_status': 'closed'}
+2025-06-16 21:37:48,618 - controllers.inference_engine - INFO - Running inference with facts: {'time_category': 'evening', 'day_of_week': 'Monday', 'weather_condition': 'mây đen u ám', 'schedule_empty_or_flexible': True, 'vscode_status': 'closed'}
+2025-06-16 21:37:48,619 - controllers.inference_engine - DEBUG - Condition for rule 'rule_1_rainy_gym' (Fact: weather_condition, Op: ==, Val: mưa) not met with actual fact: mây đen u ám.
+2025-06-16 21:37:48,619 - controllers.inference_engine - DEBUG - Condition for rule 'rule_2_work_vscode' (Fact: time_category, Op: ==, Val: work_hours) not met with actual fact: evening.
+2025-06-16 21:37:48,619 - controllers.inference_engine - DEBUG - Condition for rule 'rule_3_weekend_relax' (Fact: day_of_week, Op: in, Val: ['Thứ Bảy', 'Chủ Nhật']) not met with actual fact: Monday.
+2025-06-16 21:37:48,619 - controllers.inference_engine - INFO - Inference completed. Activated 0 actions.
+2025-06-16 21:37:48,936 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:37:48
+2025-06-16 21:37:49,936 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:37:49
+2025-06-16 21:37:50,946 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:37:50
+2025-06-16 21:37:51,963 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:37:51
+2025-06-16 21:37:52,813 - views.components.knowledge_editor_frame - INFO - Displayed all current rules.
+2025-06-16 21:37:52,969 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:37:52
+2025-06-16 21:37:53,973 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:37:53
+2025-06-16 21:37:54,974 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:37:54
+2025-06-16 21:37:56,001 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:37:56
+2025-06-16 21:37:57,003 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:37:57
+2025-06-16 21:37:58,007 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:37:58
+2025-06-16 21:37:59,008 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:37:59
+2025-06-16 21:38:00,023 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:00
+2025-06-16 21:38:01,024 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:01
+2025-06-16 21:38:02,027 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:02
+2025-06-16 21:38:03,042 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:03
+2025-06-16 21:38:04,059 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:04
+2025-06-16 21:38:05,063 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:05
+2025-06-16 21:38:06,077 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:06
+2025-06-16 21:38:07,079 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:07
+2025-06-16 21:38:08,080 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:08
+2025-06-16 21:38:09,081 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:09
+2025-06-16 21:38:10,082 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:10
+2025-06-16 21:38:11,083 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:11
+2025-06-16 21:38:12,084 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:12
+2025-06-16 21:38:13,085 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:13
+2025-06-16 21:38:14,085 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:14
+2025-06-16 21:38:15,090 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:15
+2025-06-16 21:38:16,105 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:16
+2025-06-16 21:38:17,119 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:17
+2025-06-16 21:38:18,121 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:18
+2025-06-16 21:38:19,122 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:19
+2025-06-16 21:38:20,124 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:20
+2025-06-16 21:38:21,127 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:21
+2025-06-16 21:38:22,128 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:22
+2025-06-16 21:38:23,142 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:23
+2025-06-16 21:38:24,143 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:24
+2025-06-16 21:38:25,158 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:25
+2025-06-16 21:38:26,175 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:26
+2025-06-16 21:38:27,190 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:27
+2025-06-16 21:38:28,202 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:28
+2025-06-16 21:38:29,216 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:29
+2025-06-16 21:38:30,229 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:30
+2025-06-16 21:38:31,232 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:38:31
+2025-06-16 21:39:46,479 - __main__ - DEBUG - Bắt đầu khởi tạo MainWindow...
+2025-06-16 21:39:46,489 - DatabaseManager - INFO - App launch time logged.
+2025-06-16 21:39:46,489 - __main__ - DEBUG - Khởi tạo các service và controller...
+2025-06-16 21:39:46,490 - models.knowledge_base - INFO - Loaded 3 rules from H:\my_ai\models\knowledge_base.json.
+2025-06-16 21:39:46,490 - controllers.inference_engine - INFO - Inference Engine initialized.
+2025-06-16 21:39:46,491 - __main__ - DEBUG - Thiết lập cửa sổ chính...
+2025-06-16 21:39:46,518 - __main__ - DEBUG - Tạo main frame...
+2025-06-16 21:39:46,539 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame...
+2025-06-16 21:39:46,547 - views.components.greeting_frame - DEBUG - Cập nhật lời chào và thời gian lần đầu...
+2025-06-16 21:39:46,548 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-16 21:39:46,549 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:39:46
+2025-06-16 21:39:46,549 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-16 21:39:46,549 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame hoàn tất.
+2025-06-16 21:39:46,581 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
+2025-06-16 21:39:46,971 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Hanoi%2CVN&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi HTTP/1.1" 200 511
+2025-06-16 21:39:46,972 - DatabaseManager - INFO - Weather data saved successfully.
+2025-06-16 21:39:46,972 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết từ WeatherService: {'temperature': 26, 'feels_like': 26, 'humidity': 88, 'pressure': 1005, 'description': 'mây đen u ám', 'icon': '04n', 'wind_speed': 4.26, 'clouds': 100, 'timestamp': 1750084786.971942}
+2025-06-16 21:39:46,972 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết nhận được: {'temperature': 26, 'feels_like': 26, 'humidity': 88, 'pressure': 1005, 'description': 'mây đen u ám', 'icon': '04n', 'wind_speed': 4.26, 'clouds': 100, 'timestamp': 1750084786.971942}
+2025-06-16 21:39:46,988 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-06-16 21:39:46,988 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 41 1741
+2025-06-16 21:39:46,996 - views.components.weather_frame - DEBUG - Cập nhật thông tin hàng đầu thành công.
+2025-06-16 21:39:46,997 - views.components.weather_frame - DEBUG - Cập nhật labels chính thành công.
+2025-06-16 21:39:46,997 - views.components.weather_frame - DEBUG - Cập nhật metrics thành công.
+2025-06-16 21:39:46,998 - views.components.weather_frame - DEBUG - Cập nhật mô tả dự báo hàng ngày thành công.
+2025-06-16 21:39:47,269 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
+2025-06-16 21:39:47,533 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Hanoi%2CVN&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi HTTP/1.1" 200 511
+2025-06-16 21:39:47,534 - DatabaseManager - INFO - Weather data saved successfully.
+2025-06-16 21:39:47,535 - __main__ - DEBUG - Collected facts for inference: {'time_category': 'evening', 'day_of_week': 'Monday', 'weather_condition': 'mây đen u ám', 'schedule_empty_or_flexible': True, 'vscode_status': 'closed'}
+2025-06-16 21:39:47,535 - controllers.inference_engine - INFO - Running inference with facts: {'time_category': 'evening', 'day_of_week': 'Monday', 'weather_condition': 'mây đen u ám', 'schedule_empty_or_flexible': True, 'vscode_status': 'closed'}
+2025-06-16 21:39:47,535 - controllers.inference_engine - DEBUG - Condition for rule 'rule_1_rainy_gym' (Fact: weather_condition, Op: ==, Val: mưa) not met with actual fact: mây đen u ám.
+2025-06-16 21:39:47,535 - controllers.inference_engine - DEBUG - Condition for rule 'rule_2_work_vscode' (Fact: time_category, Op: ==, Val: work_hours) not met with actual fact: evening.
+2025-06-16 21:39:47,535 - controllers.inference_engine - DEBUG - Condition for rule 'rule_3_weekend_relax' (Fact: day_of_week, Op: in, Val: ['Thứ Bảy', 'Chủ Nhật']) not met with actual fact: Monday.
+2025-06-16 21:39:47,536 - controllers.inference_engine - INFO - Inference completed. Activated 0 actions.
+2025-06-16 21:39:47,562 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:39:47
+2025-06-16 21:39:48,562 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:39:48
+2025-06-16 21:39:49,576 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:39:49
+2025-06-16 21:39:50,586 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:39:50
+2025-06-16 21:39:51,588 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:39:51
+2025-06-16 21:39:52,589 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:39:52
+2025-06-16 21:39:53,592 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:39:53
+2025-06-16 21:39:54,593 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:39:54
+2025-06-16 21:43:09,437 - __main__ - DEBUG - Bắt đầu khởi tạo MainWindow...
+2025-06-16 21:43:09,450 - DatabaseManager - INFO - App launch time logged.
+2025-06-16 21:43:09,451 - __main__ - DEBUG - Khởi tạo các service và controller...
+2025-06-16 21:43:09,452 - models.knowledge_base - INFO - Knowledge base file not found or error occurred. Loading default rules.
+2025-06-16 21:43:09,454 - models.knowledge_base - INFO - Rules saved to H:\my_ai\models\knowledge_base.json.
+2025-06-16 21:43:09,454 - models.knowledge_base - INFO - Loaded 4 default rules and saved to file.
+2025-06-16 21:43:09,455 - controllers.inference_engine - INFO - Inference Engine initialized.
+2025-06-16 21:43:09,455 - __main__ - DEBUG - Thiết lập cửa sổ chính...
+2025-06-16 21:43:09,499 - __main__ - DEBUG - Tạo main frame...
+2025-06-16 21:43:09,510 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame...
+2025-06-16 21:43:09,517 - views.components.greeting_frame - DEBUG - Cập nhật lời chào và thời gian lần đầu...
+2025-06-16 21:43:09,517 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-16 21:43:09,518 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:43:09
+2025-06-16 21:43:09,518 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-16 21:43:09,518 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame hoàn tất.
+2025-06-16 21:43:09,572 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
+2025-06-16 21:43:09,870 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Hanoi%2CVN&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi HTTP/1.1" 200 511
+2025-06-16 21:43:09,871 - DatabaseManager - INFO - Weather data saved successfully.
+2025-06-16 21:43:09,871 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết từ WeatherService: {'temperature': 26, 'feels_like': 26, 'humidity': 88, 'pressure': 1005, 'description': 'mây đen u ám', 'icon': '04n', 'wind_speed': 4.26, 'clouds': 100, 'timestamp': 1750084989.871219}
+2025-06-16 21:43:09,872 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết nhận được: {'temperature': 26, 'feels_like': 26, 'humidity': 88, 'pressure': 1005, 'description': 'mây đen u ám', 'icon': '04n', 'wind_speed': 4.26, 'clouds': 100, 'timestamp': 1750084989.871219}
+2025-06-16 21:43:09,887 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-06-16 21:43:09,888 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 41 1741
+2025-06-16 21:43:09,898 - views.components.weather_frame - DEBUG - Cập nhật thông tin hàng đầu thành công.
+2025-06-16 21:43:09,899 - views.components.weather_frame - DEBUG - Cập nhật labels chính thành công.
+2025-06-16 21:43:09,900 - views.components.weather_frame - DEBUG - Cập nhật metrics thành công.
+2025-06-16 21:43:09,901 - views.components.weather_frame - DEBUG - Cập nhật mô tả dự báo hàng ngày thành công.
+2025-06-16 21:43:10,295 - __main__ - INFO - Khởi chạy hệ chuyên gia...
+2025-06-16 21:43:10,296 - __main__ - DEBUG - Bắt đầu chạy suy luận hệ chuyên gia...
+2025-06-16 21:43:10,296 - __main__ - DEBUG - Bắt đầu thu thập facts...
+2025-06-16 21:43:10,296 - __main__ - DEBUG - Thời gian hiện tại: 2025-06-16 21:43:10.296551, Giờ: 21, Ngày: Monday
+2025-06-16 21:43:10,296 - __main__ - DEBUG - Phân loại thời gian: evening
+2025-06-16 21:43:10,296 - __main__ - DEBUG - Ngày trong tuần: Monday
+2025-06-16 21:43:10,297 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
+2025-06-16 21:43:10,557 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Hanoi%2CVN&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi HTTP/1.1" 200 511
+2025-06-16 21:43:10,557 - DatabaseManager - INFO - Weather data saved successfully.
+2025-06-16 21:43:10,558 - __main__ - DEBUG - Dữ liệu thời tiết: {'temperature': 26, 'feels_like': 26, 'humidity': 88, 'pressure': 1005, 'description': 'mây đen u ám', 'icon': '04n', 'wind_speed': 4.26, 'clouds': 100, 'timestamp': 1750084990.557636}
+2025-06-16 21:43:10,558 - __main__ - DEBUG - Điều kiện thời tiết: mây đen u ám
+2025-06-16 21:43:10,574 - __main__ - DEBUG - Dữ liệu lịch trình:        Thời gian  ...                              Chủ Nhật
+0  06:00 – 08:00  ...         Ôn tập nhanh tất cả\nmôn (2h)
+1  08:30 – 10:30  ...  Hoàn thiện dự án\nnhỏ hàng tuần (2h)
+2  14:00 – 16:00  ...          Buffer & ôn chuyên\nsâu (2h)
+3  16:30 – 18:00  ...                   Nghỉ/nghỉ linh hoạt
+4  20:00 – 22:00  ...        20:00 – 21:30: Gym\n(tùy chọn)
+
+[5 rows x 8 columns]
+2025-06-16 21:43:10,575 - __main__ - DEBUG - Lịch trình hôm nay (Monday): Series([], dtype: object)
+2025-06-16 21:43:10,575 - __main__ - DEBUG - Lịch trình trống/linh hoạt: True
+2025-06-16 21:43:10,575 - __main__ - DEBUG - Trạng thái VSCode: closed
+2025-06-16 21:43:10,576 - __main__ - DEBUG - Tổng hợp tất cả facts: {'time_category': 'evening', 'day_of_week': 'Monday', 'weather_condition': 'mây đen u ám', 'schedule_empty_or_flexible': True, 'vscode_status': 'closed'}
+2025-06-16 21:43:10,576 - __main__ - DEBUG - Facts thu thập được: {'time_category': 'evening', 'day_of_week': 'Monday', 'weather_condition': 'mây đen u ám', 'schedule_empty_or_flexible': True, 'vscode_status': 'closed'}
+2025-06-16 21:43:10,576 - controllers.inference_engine - INFO - Bắt đầu suy luận với facts: {'time_category': 'evening', 'day_of_week': 'Monday', 'weather_condition': 'mây đen u ám', 'schedule_empty_or_flexible': True, 'vscode_status': 'closed'}
+2025-06-16 21:43:10,577 - controllers.inference_engine - INFO - Số lượng quy tắc: 4
+2025-06-16 21:43:10,577 - controllers.inference_engine - INFO - 
+Đánh giá quy tắc: rule_1_rainy_gym
+2025-06-16 21:43:10,577 - controllers.inference_engine - INFO - Mô tả: Nếu trời mưa và có lịch tập Gym, đề xuất mang ô/áo mưa.
+2025-06-16 21:43:10,577 - controllers.inference_engine - INFO - Đánh giá điều kiện: weather_condition contains mưa
+2025-06-16 21:43:10,578 - controllers.inference_engine - INFO - Giá trị thực tế: mây đen u ám
+2025-06-16 21:43:10,578 - controllers.inference_engine - DEBUG - Đánh giá điều kiện: fact_value=mây đen u ám, operator=contains, condition_value=mưa
+2025-06-16 21:43:10,578 - controllers.inference_engine - DEBUG - Kết quả đánh giá: False
+2025-06-16 21:43:10,578 - controllers.inference_engine - INFO - Điều kiện không thỏa mãn cho quy tắc 'rule_1_rainy_gym'
+2025-06-16 21:43:10,578 - controllers.inference_engine - INFO - Quy tắc 'rule_1_rainy_gym' không được kích hoạt
+2025-06-16 21:43:10,579 - controllers.inference_engine - INFO - 
+Đánh giá quy tắc: rule_2_morning_vscode
+2025-06-16 21:43:10,579 - controllers.inference_engine - INFO - Mô tả: Nếu là buổi sáng và VSCode chưa mở, đề xuất mở VSCode.
+2025-06-16 21:43:10,579 - controllers.inference_engine - INFO - Đánh giá điều kiện: time_category == morning
+2025-06-16 21:43:10,579 - controllers.inference_engine - INFO - Giá trị thực tế: evening
+2025-06-16 21:43:10,580 - controllers.inference_engine - DEBUG - Đánh giá điều kiện: fact_value=evening, operator===, condition_value=morning
+2025-06-16 21:43:10,580 - controllers.inference_engine - DEBUG - Kết quả đánh giá: False
+2025-06-16 21:43:10,580 - controllers.inference_engine - INFO - Điều kiện không thỏa mãn cho quy tắc 'rule_2_morning_vscode'
+2025-06-16 21:43:10,580 - controllers.inference_engine - INFO - Quy tắc 'rule_2_morning_vscode' không được kích hoạt
+2025-06-16 21:43:10,580 - controllers.inference_engine - INFO - 
+Đánh giá quy tắc: rule_3_weekend_relax
+2025-06-16 21:43:10,581 - controllers.inference_engine - INFO - Mô tả: Nếu là cuối tuần và không có lịch trình cụ thể, đề xuất nghỉ ngơi/giải trí.
+2025-06-16 21:43:10,581 - controllers.inference_engine - INFO - Đánh giá điều kiện: day_of_week in ['Saturday', 'Sunday']
+2025-06-16 21:43:10,581 - controllers.inference_engine - INFO - Giá trị thực tế: Monday
+2025-06-16 21:43:10,581 - controllers.inference_engine - DEBUG - Đánh giá điều kiện: fact_value=Monday, operator=in, condition_value=['Saturday', 'Sunday']
+2025-06-16 21:43:10,582 - controllers.inference_engine - DEBUG - Kết quả đánh giá: False
+2025-06-16 21:43:10,582 - controllers.inference_engine - INFO - Điều kiện không thỏa mãn cho quy tắc 'rule_3_weekend_relax'
+2025-06-16 21:43:10,582 - controllers.inference_engine - INFO - Quy tắc 'rule_3_weekend_relax' không được kích hoạt
+2025-06-16 21:43:10,582 - controllers.inference_engine - INFO - 
+Đánh giá quy tắc: rule_4_afternoon_break
+2025-06-16 21:43:10,582 - controllers.inference_engine - INFO - Mô tả: Nếu là buổi chiều và lịch trình trống, đề xuất nghỉ ngơi.
+2025-06-16 21:43:10,583 - controllers.inference_engine - INFO - Đánh giá điều kiện: time_category == afternoon
+2025-06-16 21:43:10,583 - controllers.inference_engine - INFO - Giá trị thực tế: evening
+2025-06-16 21:43:10,583 - controllers.inference_engine - DEBUG - Đánh giá điều kiện: fact_value=evening, operator===, condition_value=afternoon
+2025-06-16 21:43:10,583 - controllers.inference_engine - DEBUG - Kết quả đánh giá: False
+2025-06-16 21:43:10,584 - controllers.inference_engine - INFO - Điều kiện không thỏa mãn cho quy tắc 'rule_4_afternoon_break'
+2025-06-16 21:43:10,584 - controllers.inference_engine - INFO - Quy tắc 'rule_4_afternoon_break' không được kích hoạt
+2025-06-16 21:43:10,584 - controllers.inference_engine - INFO - Kết thúc suy luận. Số hành động được kích hoạt: 0
+2025-06-16 21:43:10,584 - __main__ - DEBUG - Các hành động được kích hoạt: []
+2025-06-16 21:43:10,585 - __main__ - DEBUG - Không có hành động nào được kích hoạt, xóa text cũ
+2025-06-16 21:43:10,591 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:43:10
+2025-06-16 21:43:11,602 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:43:11
+2025-06-16 21:43:12,603 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:43:12
+2025-06-16 21:43:13,613 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:43:13
+2025-06-16 21:43:14,617 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:43:14
+2025-06-16 21:43:15,622 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:43:15
+2025-06-16 21:43:16,637 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:43:16
+2025-06-16 21:43:17,638 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:43:17
+2025-06-16 21:43:18,643 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:43:18
+2025-06-16 21:43:19,651 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:43:19
+2025-06-16 21:43:20,652 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:43:20
+2025-06-16 21:43:21,657 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:43:21
+2025-06-16 21:43:22,666 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:43:22
+2025-06-16 21:43:23,667 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:43:23
+2025-06-16 21:43:24,668 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:43:24
+2025-06-16 21:44:48,260 - __main__ - DEBUG - Bắt đầu khởi tạo MainWindow...
+2025-06-16 21:44:48,265 - DatabaseManager - INFO - App launch time logged.
+2025-06-16 21:44:48,266 - __main__ - DEBUG - Khởi tạo các service và controller...
+2025-06-16 21:44:48,267 - models.knowledge_base - INFO - Loaded 4 rules from H:\my_ai\models\knowledge_base.json.
+2025-06-16 21:44:48,267 - controllers.inference_engine - INFO - Inference Engine initialized.
+2025-06-16 21:44:48,267 - __main__ - DEBUG - Thiết lập cửa sổ chính...
+2025-06-16 21:44:48,304 - __main__ - DEBUG - Tạo main frame...
+2025-06-16 21:44:48,320 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame...
+2025-06-16 21:44:48,328 - views.components.greeting_frame - DEBUG - Cập nhật lời chào và thời gian lần đầu...
+2025-06-16 21:44:48,328 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-16 21:44:48,329 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:44:48
+2025-06-16 21:44:48,329 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-16 21:44:48,330 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame hoàn tất.
+2025-06-16 21:44:48,370 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
+2025-06-16 21:44:48,763 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Hanoi%2CVN&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi HTTP/1.1" 200 511
+2025-06-16 21:44:48,764 - DatabaseManager - INFO - Weather data saved successfully.
+2025-06-16 21:44:48,764 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết từ WeatherService: {'temperature': 26, 'feels_like': 26, 'humidity': 88, 'pressure': 1005, 'description': 'mây đen u ám', 'icon': '04n', 'wind_speed': 4.26, 'clouds': 100, 'timestamp': 1750085088.76432}
+2025-06-16 21:44:48,765 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết nhận được: {'temperature': 26, 'feels_like': 26, 'humidity': 88, 'pressure': 1005, 'description': 'mây đen u ám', 'icon': '04n', 'wind_speed': 4.26, 'clouds': 100, 'timestamp': 1750085088.76432}
+2025-06-16 21:44:48,779 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-06-16 21:44:48,779 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 41 1741
+2025-06-16 21:44:48,789 - views.components.weather_frame - DEBUG - Cập nhật thông tin hàng đầu thành công.
+2025-06-16 21:44:48,789 - views.components.weather_frame - DEBUG - Cập nhật labels chính thành công.
+2025-06-16 21:44:48,790 - views.components.weather_frame - DEBUG - Cập nhật metrics thành công.
+2025-06-16 21:44:48,790 - views.components.weather_frame - DEBUG - Cập nhật mô tả dự báo hàng ngày thành công.
+2025-06-16 21:44:49,060 - __main__ - INFO - Khởi chạy hệ chuyên gia...
+2025-06-16 21:44:49,060 - __main__ - DEBUG - Bắt đầu chạy suy luận hệ chuyên gia...
+2025-06-16 21:44:49,060 - __main__ - DEBUG - Bắt đầu thu thập facts...
+2025-06-16 21:44:49,061 - __main__ - DEBUG - Thời gian hiện tại: 2025-06-16 21:44:49.061119, Giờ: 21, Ngày: Monday
+2025-06-16 21:44:49,061 - __main__ - DEBUG - Phân loại thời gian: evening
+2025-06-16 21:44:49,061 - __main__ - DEBUG - Ngày trong tuần: Monday
+2025-06-16 21:44:49,062 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
+2025-06-16 21:44:49,342 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Hanoi%2CVN&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi HTTP/1.1" 200 511
+2025-06-16 21:44:49,342 - DatabaseManager - INFO - Weather data saved successfully.
+2025-06-16 21:44:49,343 - __main__ - DEBUG - Dữ liệu thời tiết: {'temperature': 26, 'feels_like': 26, 'humidity': 88, 'pressure': 1005, 'description': 'mây đen u ám', 'icon': '04n', 'wind_speed': 4.26, 'clouds': 100, 'timestamp': 1750085089.342879}
+2025-06-16 21:44:49,343 - __main__ - DEBUG - Điều kiện thời tiết: mây đen u ám
+2025-06-16 21:44:49,349 - __main__ - DEBUG - Dữ liệu lịch trình:        Thời gian  ...                              Chủ Nhật
+0  06:00 – 08:00  ...         Ôn tập nhanh tất cả\nmôn (2h)
+1  08:30 – 10:30  ...  Hoàn thiện dự án\nnhỏ hàng tuần (2h)
+2  14:00 – 16:00  ...          Buffer & ôn chuyên\nsâu (2h)
+3  16:30 – 18:00  ...                   Nghỉ/nghỉ linh hoạt
+4  20:00 – 22:00  ...        20:00 – 21:30: Gym\n(tùy chọn)
+
+[5 rows x 8 columns]
+2025-06-16 21:44:49,350 - __main__ - DEBUG - Lịch trình hôm nay (Monday): Series([], dtype: object)
+2025-06-16 21:44:49,351 - __main__ - DEBUG - Lịch trình trống/linh hoạt: True
+2025-06-16 21:44:49,351 - __main__ - DEBUG - Trạng thái VSCode: closed
+2025-06-16 21:44:49,351 - __main__ - DEBUG - Tổng hợp tất cả facts: {'time_category': 'evening', 'day_of_week': 'Monday', 'weather_condition': 'mây đen u ám', 'schedule_empty_or_flexible': True, 'vscode_status': 'closed'}
+2025-06-16 21:44:49,351 - __main__ - DEBUG - Facts thu thập được: {'time_category': 'evening', 'day_of_week': 'Monday', 'weather_condition': 'mây đen u ám', 'schedule_empty_or_flexible': True, 'vscode_status': 'closed'}
+2025-06-16 21:44:49,351 - controllers.inference_engine - INFO - Bắt đầu suy luận với facts: {'time_category': 'evening', 'day_of_week': 'Monday', 'weather_condition': 'mây đen u ám', 'schedule_empty_or_flexible': True, 'vscode_status': 'closed'}
+2025-06-16 21:44:49,352 - controllers.inference_engine - INFO - Số lượng quy tắc: 4
+2025-06-16 21:44:49,352 - controllers.inference_engine - INFO - 
+Đánh giá quy tắc: rule_1_rainy_gym
+2025-06-16 21:44:49,352 - controllers.inference_engine - INFO - Mô tả: Nếu trời mưa và có lịch tập Gym, đề xuất mang ô/áo mưa.
+2025-06-16 21:44:49,353 - controllers.inference_engine - INFO - Đánh giá điều kiện: weather_condition contains mưa
+2025-06-16 21:44:49,353 - controllers.inference_engine - INFO - Giá trị thực tế: mây đen u ám
+2025-06-16 21:44:49,353 - controllers.inference_engine - DEBUG - Đánh giá điều kiện: fact_value=mây đen u ám, operator=contains, condition_value=mưa
+2025-06-16 21:44:49,353 - controllers.inference_engine - DEBUG - Kết quả đánh giá: False
+2025-06-16 21:44:49,353 - controllers.inference_engine - INFO - Điều kiện không thỏa mãn cho quy tắc 'rule_1_rainy_gym'
+2025-06-16 21:44:49,353 - controllers.inference_engine - INFO - Quy tắc 'rule_1_rainy_gym' không được kích hoạt
+2025-06-16 21:44:49,354 - controllers.inference_engine - INFO - 
+Đánh giá quy tắc: rule_2_morning_vscode
+2025-06-16 21:44:49,354 - controllers.inference_engine - INFO - Mô tả: Nếu là buổi sáng và VSCode chưa mở, đề xuất mở VSCode.
+2025-06-16 21:44:49,354 - controllers.inference_engine - INFO - Đánh giá điều kiện: time_category == morning
+2025-06-16 21:44:49,354 - controllers.inference_engine - INFO - Giá trị thực tế: evening
+2025-06-16 21:44:49,354 - controllers.inference_engine - DEBUG - Đánh giá điều kiện: fact_value=evening, operator===, condition_value=morning
+2025-06-16 21:44:49,355 - controllers.inference_engine - DEBUG - Kết quả đánh giá: False
+2025-06-16 21:44:49,355 - controllers.inference_engine - INFO - Điều kiện không thỏa mãn cho quy tắc 'rule_2_morning_vscode'
+2025-06-16 21:44:49,355 - controllers.inference_engine - INFO - Quy tắc 'rule_2_morning_vscode' không được kích hoạt
+2025-06-16 21:44:49,356 - controllers.inference_engine - INFO - 
+Đánh giá quy tắc: rule_3_weekend_relax
+2025-06-16 21:44:49,356 - controllers.inference_engine - INFO - Mô tả: Nếu là cuối tuần và không có lịch trình cụ thể, đề xuất nghỉ ngơi/giải trí.
+2025-06-16 21:44:49,356 - controllers.inference_engine - INFO - Đánh giá điều kiện: day_of_week in ['Saturday', 'Sunday']
+2025-06-16 21:44:49,357 - controllers.inference_engine - INFO - Giá trị thực tế: Monday
+2025-06-16 21:44:49,357 - controllers.inference_engine - DEBUG - Đánh giá điều kiện: fact_value=Monday, operator=in, condition_value=['Saturday', 'Sunday']
+2025-06-16 21:44:49,357 - controllers.inference_engine - DEBUG - Kết quả đánh giá: False
+2025-06-16 21:44:49,358 - controllers.inference_engine - INFO - Điều kiện không thỏa mãn cho quy tắc 'rule_3_weekend_relax'
+2025-06-16 21:44:49,358 - controllers.inference_engine - INFO - Quy tắc 'rule_3_weekend_relax' không được kích hoạt
+2025-06-16 21:44:49,358 - controllers.inference_engine - INFO - 
+Đánh giá quy tắc: rule_4_afternoon_break
+2025-06-16 21:44:49,358 - controllers.inference_engine - INFO - Mô tả: Nếu là buổi chiều và lịch trình trống, đề xuất nghỉ ngơi.
+2025-06-16 21:44:49,359 - controllers.inference_engine - INFO - Đánh giá điều kiện: time_category == afternoon
+2025-06-16 21:44:49,359 - controllers.inference_engine - INFO - Giá trị thực tế: evening
+2025-06-16 21:44:49,359 - controllers.inference_engine - DEBUG - Đánh giá điều kiện: fact_value=evening, operator===, condition_value=afternoon
+2025-06-16 21:44:49,359 - controllers.inference_engine - DEBUG - Kết quả đánh giá: False
+2025-06-16 21:44:49,360 - controllers.inference_engine - INFO - Điều kiện không thỏa mãn cho quy tắc 'rule_4_afternoon_break'
+2025-06-16 21:44:49,360 - controllers.inference_engine - INFO - Quy tắc 'rule_4_afternoon_break' không được kích hoạt
+2025-06-16 21:44:49,360 - controllers.inference_engine - INFO - Kết thúc suy luận. Số hành động được kích hoạt: 0
+2025-06-16 21:44:49,360 - __main__ - DEBUG - Các hành động được kích hoạt: []
+2025-06-16 21:44:49,360 - __main__ - DEBUG - Không có hành động nào được kích hoạt, xóa text cũ
+2025-06-16 21:44:49,367 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:44:49
+2025-06-16 21:44:50,369 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:44:50
+2025-06-16 21:44:51,372 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:44:51
+2025-06-16 21:44:52,386 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:44:52
+2025-06-16 21:44:53,401 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:44:53
+2025-06-16 21:44:54,416 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:44:54
+2025-06-16 21:44:55,426 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:44:55
+2025-06-16 21:44:55,564 - views.components.knowledge_editor_frame - INFO - Displayed all current rules.
+2025-06-16 21:44:56,427 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:44:56
+2025-06-16 21:44:57,478 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:44:57
+2025-06-16 21:44:58,493 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:44:58
+2025-06-16 21:44:59,508 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:44:59
+2025-06-16 21:45:00,523 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:45:00
+2025-06-16 21:45:01,536 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:45:01
+2025-06-16 21:45:02,537 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:45:02
+2025-06-16 21:45:03,545 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:45:03
+2025-06-16 21:45:04,613 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:45:04
+2025-06-16 21:45:05,614 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:45:05
+2025-06-16 21:45:06,616 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:45:06
+2025-06-16 21:45:07,631 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:45:07
+2025-06-16 21:45:08,633 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:45:08
+2025-06-16 21:54:51,390 - __main__ - DEBUG - Bắt đầu khởi tạo MainWindow...
+2025-06-16 21:54:51,401 - DatabaseManager - INFO - App launch time logged.
+2025-06-16 21:54:51,402 - __main__ - DEBUG - Khởi tạo các service và controller...
+2025-06-16 21:54:51,404 - models.knowledge_base - INFO - Loaded 4 rules from H:\my_ai\models\knowledge_base.json.
+2025-06-16 21:54:51,404 - controllers.inference_engine - INFO - Inference Engine initialized.
+2025-06-16 21:54:51,405 - controllers.rule_suggester - INFO - Rule Suggester initialized.
+2025-06-16 21:54:51,405 - __main__ - DEBUG - Thiết lập cửa sổ chính...
+2025-06-16 21:54:51,431 - __main__ - DEBUG - Tạo main frame...
+2025-06-16 21:54:51,450 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame...
+2025-06-16 21:54:51,457 - views.components.greeting_frame - DEBUG - Cập nhật lời chào và thời gian lần đầu...
+2025-06-16 21:54:51,457 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-16 21:54:51,458 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:54:51
+2025-06-16 21:54:51,458 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-16 21:54:51,458 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame hoàn tất.
+2025-06-16 21:54:51,515 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
+2025-06-16 21:54:51,895 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Hanoi%2CVN&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi HTTP/1.1" 200 511
+2025-06-16 21:55:24,709 - DatabaseManager - ERROR - Query execution error: database is locked
+2025-06-16 21:55:24,710 - DatabaseManager - ERROR - Transaction error: database is locked
+2025-06-16 21:55:24,710 - services.weather_service - ERROR - Error getting weather data: database is locked
+2025-06-16 21:55:24,711 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết từ WeatherService: None
+2025-06-16 21:55:24,718 - __main__ - ERROR - Lỗi khởi tạo MainWindow: ScheduleController.__init__() missing 2 required positional arguments: 'db' and 'fact_collector'
+2025-06-16 21:55:24,730 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:55:24
+2025-06-16 21:55:25,743 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:55:25
+2025-06-16 21:55:26,755 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:55:26
+2025-06-16 21:55:27,769 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:55:27
+2025-06-16 21:55:28,785 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:55:28
+2025-06-16 21:55:29,789 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:55:29
+2025-06-16 21:55:30,807 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:55:30
+2025-06-16 21:55:31,813 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:55:31
+2025-06-16 21:55:33,522 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:55:33
+2025-06-16 21:55:34,536 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:55:34
+2025-06-16 21:55:35,547 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:55:35
+2025-06-16 21:55:36,549 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:55:36
+2025-06-16 21:55:37,559 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:55:37
+2025-06-16 21:55:38,561 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:55:38
+2025-06-16 21:55:39,574 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:55:39
+2025-06-16 21:55:40,581 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:55:40
+2025-06-16 21:55:41,584 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:55:41
+2025-06-16 21:55:42,586 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:55:42
+2025-06-16 21:55:53,546 - __main__ - DEBUG - Bắt đầu khởi tạo MainWindow...
+2025-06-16 21:55:53,551 - DatabaseManager - INFO - App launch time logged.
+2025-06-16 21:55:53,551 - __main__ - DEBUG - Khởi tạo các service và controller...
+2025-06-16 21:55:53,552 - models.knowledge_base - INFO - Loaded 4 rules from H:\my_ai\models\knowledge_base.json.
+2025-06-16 21:55:53,552 - controllers.inference_engine - INFO - Inference Engine initialized.
+2025-06-16 21:55:53,553 - controllers.rule_suggester - INFO - Rule Suggester initialized.
+2025-06-16 21:55:53,553 - __main__ - DEBUG - Thiết lập cửa sổ chính...
+2025-06-16 21:55:53,583 - __main__ - DEBUG - Tạo main frame...
+2025-06-16 21:55:53,599 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame...
+2025-06-16 21:55:53,607 - views.components.greeting_frame - DEBUG - Cập nhật lời chào và thời gian lần đầu...
+2025-06-16 21:55:53,608 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-16 21:55:53,608 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:55:53
+2025-06-16 21:55:53,609 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-16 21:55:53,609 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame hoàn tất.
+2025-06-16 21:55:53,669 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
+2025-06-16 21:55:53,961 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Hanoi%2CVN&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi HTTP/1.1" 200 511
+2025-06-16 21:56:17,439 - __main__ - DEBUG - Bắt đầu khởi tạo MainWindow...
+2025-06-16 21:56:26,804 - DatabaseManager - ERROR - Query execution error: database is locked
+2025-06-16 21:56:26,804 - DatabaseManager - ERROR - Transaction error: database is locked
+2025-06-16 21:56:26,805 - services.weather_service - ERROR - Error getting weather data: database is locked
+2025-06-16 21:56:26,806 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết từ WeatherService: None
+2025-06-16 21:56:26,812 - __main__ - ERROR - Lỗi khởi tạo MainWindow: ScheduleController.__init__() missing 2 required positional arguments: 'db' and 'fact_collector'
+2025-06-16 21:56:26,822 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:56:26
+2025-06-16 21:56:27,832 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:56:27
+2025-06-16 21:56:28,841 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:56:28
+2025-06-16 21:56:29,842 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:56:29
+2025-06-16 21:56:30,843 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:56:30
+2025-06-16 21:56:31,847 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:56:31
+2025-06-16 21:56:32,861 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:56:32
+2025-06-16 21:56:33,864 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:56:33
+2025-06-16 21:56:34,879 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:56:34
+2025-06-16 21:56:36,121 - DatabaseManager - INFO - App launch time logged.
+2025-06-16 21:56:36,121 - __main__ - DEBUG - Khởi tạo các service và controller...
+2025-06-16 21:56:36,125 - models.knowledge_base - INFO - Loaded 4 rules from H:\my_ai\models\knowledge_base.json.
+2025-06-16 21:56:36,125 - controllers.inference_engine - INFO - Inference Engine initialized.
+2025-06-16 21:56:36,125 - controllers.rule_suggester - INFO - Rule Suggester initialized.
+2025-06-16 21:56:36,125 - __main__ - DEBUG - Thiết lập cửa sổ chính...
+2025-06-16 21:56:36,137 - __main__ - DEBUG - Tạo main frame...
+2025-06-16 21:56:36,161 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame...
+2025-06-16 21:56:36,188 - views.components.greeting_frame - DEBUG - Cập nhật lời chào và thời gian lần đầu...
+2025-06-16 21:56:36,189 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-16 21:56:36,191 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:56:36
+2025-06-16 21:56:36,192 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-16 21:56:36,192 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame hoàn tất.
+2025-06-16 21:56:36,296 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
+2025-06-16 21:56:36,593 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Hanoi%2CVN&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi HTTP/1.1" 200 511
+2025-06-16 21:57:07,213 - __main__ - DEBUG - Bắt đầu khởi tạo MainWindow...
+2025-06-16 21:57:07,221 - DatabaseManager - INFO - App launch time logged.
+2025-06-16 21:57:07,222 - __main__ - DEBUG - Khởi tạo các service và controller...
+2025-06-16 21:57:07,223 - models.knowledge_base - INFO - Loaded 4 rules from H:\my_ai\models\knowledge_base.json.
+2025-06-16 21:57:07,223 - controllers.inference_engine - INFO - Inference Engine initialized.
+2025-06-16 21:57:07,223 - controllers.rule_suggester - INFO - Rule Suggester initialized.
+2025-06-16 21:57:07,223 - __main__ - DEBUG - Thiết lập cửa sổ chính...
+2025-06-16 21:57:07,262 - __main__ - DEBUG - Tạo main frame...
+2025-06-16 21:57:07,282 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame...
+2025-06-16 21:57:07,293 - views.components.greeting_frame - DEBUG - Cập nhật lời chào và thời gian lần đầu...
+2025-06-16 21:57:07,293 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-16 21:57:07,294 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:57:07
+2025-06-16 21:57:07,294 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-16 21:57:07,295 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame hoàn tất.
+2025-06-16 21:57:07,328 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
+2025-06-16 21:57:07,625 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Hanoi%2CVN&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi HTTP/1.1" 200 511
+2025-06-16 21:57:40,456 - DatabaseManager - ERROR - Query execution error: database is locked
+2025-06-16 21:57:40,457 - DatabaseManager - ERROR - Transaction error: database is locked
+2025-06-16 21:57:40,458 - services.weather_service - ERROR - Error getting weather data: database is locked
+2025-06-16 21:57:40,459 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết từ WeatherService: None
+2025-06-16 21:57:40,465 - __main__ - ERROR - Lỗi khởi tạo MainWindow: ScheduleController.__init__() missing 2 required positional arguments: 'db' and 'fact_collector'
+2025-06-16 21:57:40,475 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:57:40
+2025-06-16 21:57:41,487 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:57:41
+2025-06-16 21:57:42,501 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:57:42
+2025-06-16 21:57:43,511 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:57:43
+2025-06-16 21:57:44,516 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:57:44
+2025-06-16 21:57:45,520 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:57:45
+2025-06-16 21:57:46,521 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:57:46
+2025-06-16 21:58:36,939 - __main__ - DEBUG - Bắt đầu khởi tạo MainWindow...
+2025-06-16 21:58:36,949 - DatabaseManager - INFO - App launch time logged.
+2025-06-16 21:58:36,949 - __main__ - DEBUG - Khởi tạo các service và controller...
+2025-06-16 21:58:36,950 - models.knowledge_base - INFO - Loaded 4 rules from H:\my_ai\models\knowledge_base.json.
+2025-06-16 21:58:36,950 - controllers.inference_engine - INFO - Inference Engine initialized.
+2025-06-16 21:58:36,950 - controllers.rule_suggester - INFO - Rule Suggester initialized.
+2025-06-16 21:58:36,950 - __main__ - DEBUG - Thiết lập cửa sổ chính...
+2025-06-16 21:58:36,973 - __main__ - DEBUG - Tạo main frame...
+2025-06-16 21:58:36,990 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame...
+2025-06-16 21:58:36,998 - views.components.greeting_frame - DEBUG - Cập nhật lời chào và thời gian lần đầu...
+2025-06-16 21:58:36,998 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-16 21:58:36,999 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:58:36
+2025-06-16 21:58:36,999 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-16 21:58:36,999 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame hoàn tất.
+2025-06-16 21:58:37,049 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
+2025-06-16 21:58:37,412 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Hanoi%2CVN&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi HTTP/1.1" 200 511
+2025-06-16 21:59:10,284 - DatabaseManager - ERROR - Query execution error: database is locked
+2025-06-16 21:59:10,285 - DatabaseManager - ERROR - Transaction error: database is locked
+2025-06-16 21:59:10,285 - services.weather_service - ERROR - Error getting weather data: database is locked
+2025-06-16 21:59:10,285 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết từ WeatherService: None
+2025-06-16 21:59:10,289 - __main__ - ERROR - Lỗi khởi tạo MainWindow: ScheduleController.__init__() missing 2 required positional arguments: 'db' and 'fact_collector'
+2025-06-16 21:59:10,297 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:59:10
+2025-06-16 21:59:11,302 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:59:11
+2025-06-16 21:59:12,307 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:59:12
+2025-06-16 21:59:13,308 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 21:59:13

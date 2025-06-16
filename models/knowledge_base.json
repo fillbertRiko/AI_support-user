@@ -1,0 +1,93 @@
+{
+    "rule_1_rainy_gym": {
+        "description": "Nếu trời mưa và có lịch tập Gym, đề xuất mang ô/áo mưa.",
+        "conditions": [
+            {
+                "fact": "weather_condition",
+                "operator": "contains",
+                "value": "mưa"
+            },
+            {
+                "fact": "schedule_activity",
+                "operator": "==",
+                "value": "Gym"
+            }
+        ],
+        "actions": [
+            {
+                "type": "recommendation",
+                "message": "Thời tiết đang mưa, hãy mang theo ô hoặc áo mưa khi đi tập Gym nhé!"
+            }
+        ]
+    },
+    "rule_2_morning_vscode": {
+        "description": "Nếu là buổi sáng và VSCode chưa mở, đề xuất mở VSCode.",
+        "conditions": [
+            {
+                "fact": "time_category",
+                "operator": "==",
+                "value": "morning"
+            },
+            {
+                "fact": "vscode_status",
+                "operator": "==",
+                "value": "closed"
+            }
+        ],
+        "actions": [
+            {
+                "type": "recommendation",
+                "message": "Buổi sáng rồi, bạn có muốn mở VSCode để bắt đầu công việc không?"
+            },
+            {
+                "type": "action",
+                "command": "open_vscode"
+            }
+        ]
+    },
+    "rule_3_weekend_relax": {
+        "description": "Nếu là cuối tuần và không có lịch trình cụ thể, đề xuất nghỉ ngơi/giải trí.",
+        "conditions": [
+            {
+                "fact": "day_of_week",
+                "operator": "in",
+                "value": [
+                    "Saturday",
+                    "Sunday"
+                ]
+            },
+            {
+                "fact": "schedule_empty_or_flexible",
+                "operator": "==",
+                "value": true
+            }
+        ],
+        "actions": [
+            {
+                "type": "recommendation",
+                "message": "Cuối tuần rồi, hãy thư giãn và tận hưởng thời gian rảnh nhé!"
+            }
+        ]
+    },
+    "rule_4_afternoon_break": {
+        "description": "Nếu là buổi chiều và lịch trình trống, đề xuất nghỉ ngơi.",
+        "conditions": [
+            {
+                "fact": "time_category",
+                "operator": "==",
+                "value": "afternoon"
+            },
+            {
+                "fact": "schedule_empty_or_flexible",
+                "operator": "==",
+                "value": true
+            }
+        ],
+        "actions": [
+            {
+                "type": "recommendation",
+                "message": "Buổi chiều rảnh rỗi, bạn có thể nghỉ ngơi một chút để lấy lại năng lượng!"
+            }
+        ]
+    }
+}

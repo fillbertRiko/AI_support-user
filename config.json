@@ -1,0 +1,27 @@
+{
+    "weather": {
+        "city": "Hanoi",
+        "country_code": "VN",
+        "api_key": "1cfcda7a3ee2a0f49e546a462ef6851b",
+        "update_interval": 300
+    },
+    "app": {
+        "window_size": "800x600",
+        "theme": "light",
+        "language": "vi"
+    },
+    "logging": {
+        "level": "DEBUG",
+        "file": "app.log",
+        "max_size": 1048576,
+        "backup_count": 5
+    },
+    "database": {
+        "path": "data/app.db",
+        "backup_path": "data/backups"
+    },
+    "news": {
+        "api_key": "c0dd4dcfa6084494a54388014bc591f3",
+        "update_interval": 300
+    }
+}
