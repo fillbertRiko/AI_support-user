@@ -3,7 +3,6 @@ import subprocess
 import logging
 from models.vscode import VSCode
 from services.update_optimizer_service import UpdateOptimizerService
-from services.gemini_error_correction_service import GeminiErrorCorrectionService
 
 logger = logging.getLogger(__name__)
 
@@ -13,7 +12,6 @@ class VSCodeController:
         self.update_optimizer = UpdateOptimizerService()
         self.db = db
         self.fact_collector = fact_collector
-        self.gemini_service = GeminiErrorCorrectionService()
 
     def open_vscode(self):
         """Mở VSCode"""
@@ -43,13 +41,4 @@ class VSCodeController:
 
     def update_settings(self, data):
         """Cập nhật cài đặt VSCode"""
-        return self.vscode_model.update_settings(data)
-
-    def review_code_with_gemini(self, code: str) -> str:
-        """Gửi mã tới Gemini để được đánh giá"""
-        logger.info("Requesting code review from Gemini...")
-        review = self.gemini_service.get_code_review(code)
-        # Log interaction (optional, but good for tracking usage)
-        current_facts = self.fact_collector()
-        self.db.log_user_interaction("code_review_gemini", current_facts)
-        return review 
+        return self.vscode_model.update_settings(data) 

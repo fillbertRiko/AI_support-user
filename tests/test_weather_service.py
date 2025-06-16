@@ -1,8 +1,8 @@
 import unittest
 from unittest.mock import patch, MagicMock
 from datetime import datetime, timedelta
-from src.services.weather_service import WeatherService
-from src.core.database import DatabaseManager
+from src.services.weather_service import WeatherService # type: ignore
+from src.core.database import DatabaseManager # type: ignore
 import os
 
 class TestWeatherService(unittest.TestCase):
