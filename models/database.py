@@ -27,8 +27,9 @@ class DatabaseManager:
         self._connection_pool = []
         self._max_connections = 5
         self._lock = threading.Lock()
-        self._current_transaction_connection = threading.local() # Biến cục bộ cho luồng hiện tại
+        self._current_transaction_connection = threading.local()
         self._current_transaction_connection.conn = None
+        self._timeout = 30  # Tăng timeout lên 30 giây
 
         # Thiết lập logging trước
         logging.basicConfig(
@@ -39,7 +40,7 @@ class DatabaseManager:
         
         # Tạo thư mục nếu chưa tồn tại
         db_dir = os.path.dirname(self._db_path)
-        if db_dir:  # Chỉ tạo thư mục nếu đường dẫn không rỗng
+        if db_dir:
             os.makedirs(db_dir, exist_ok=True)
         
         # Khởi tạo database
@@ -128,9 +129,12 @@ class DatabaseManager:
                     conn = sqlite3.connect(
                         self._db_path,
                         check_same_thread=False,
-                        timeout=30
+                        timeout=self._timeout,
+                        isolation_level=None  # Tắt autocommit mode
                     )
                     conn.row_factory = sqlite3.Row
+                    conn.execute('PRAGMA journal_mode=WAL')  # Sử dụng Write-Ahead Logging
+                    conn.execute('PRAGMA busy_timeout=30000')  # Set busy timeout to 30 seconds
             yield conn
         except Exception as e:
             self.logger.error(f"Database error: {str(e)}")

@@ -4,10 +4,10 @@ import pandas as pd
 from controllers.vscode_controller import VSCodeController
 
 class VSCodeFrame(ctk.CTkFrame):
-    def __init__(self, parent):
+    def __init__(self, parent, db, fact_collector):
         super().__init__(parent, fg_color="transparent")
         self.parent = parent
-        self.controller = VSCodeController()
+        self.controller = VSCodeController(db, fact_collector)
         
         # Tạo các widget
         self.create_widgets()

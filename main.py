@@ -24,6 +24,29 @@ from services.scheduler_service import SchedulerService
 from services.weather_service import WeatherService
 from services.gemini_error_correction_service import GeminiErrorCorrectionService
 
+# Thiết lập logging
+def setup_logging():
+    log_dir = "logs"
+    if not os.path.exists(log_dir):
+        os.makedirs(log_dir)
+        
+    log_file = os.path.join(log_dir, "app.log")
+    
+    # Đóng tất cả handlers hiện tại
+    for handler in logging.getLogger().handlers[:]:
+        handler.close()
+        logging.getLogger().removeHandler(handler)
+    
+    # Thiết lập logging mới với encoding UTF-8
+    logging.basicConfig(
+        level=logging.DEBUG,
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.FileHandler(log_file, encoding='utf-8', mode='a'),
+            logging.StreamHandler(sys.stdout)
+        ]
+    )
+
 # Thiết lập theme cho CustomTkinter
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
@@ -44,45 +67,8 @@ TEXT_COLORS = {
     "night": "#ffffff"   # Màu trắng cho nền tối
 }
 
-# Thiết lập logging
-logging.basicConfig(
-    level=logging.DEBUG,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler('app.log', encoding='utf-8'),
-        logging.StreamHandler(sys.stdout)
-    ]
-)
-logger = logging.getLogger(__name__)
-
-def manage_log_file():
-    """Manages the application log file by archiving it daily."""
-    log_file_path = 'app.log'
-    if os.path.exists(log_file_path):
-        last_modified_timestamp = os.path.getmtime(log_file_path)
-        last_modified_date = datetime.fromtimestamp(last_modified_timestamp).date()
-        current_date = datetime.now().date()
-
-        if last_modified_date < current_date:
-            # Archive the old log file
-            archive_name = last_modified_date.strftime('app_%Y-%m-%d.log')
-            os.rename(log_file_path, archive_name)
-            logger.info(f"Archived old log file to: {archive_name}")
-
-            # Create a new, empty log file for today
-            open(log_file_path, 'a', encoding='utf-8').close()
-            logger.info(f"Created new log file: {log_file_path}")
-
-def check_internet_connection():
-    """Kiểm tra kết nối internet"""
-    try:
-        socket.create_connection(("8.8.8.8", 53), timeout=3)
-        return True
-    except OSError:
-        return False
-
 def get_time_of_day():
-    """Xác định thời gian trong ngày"""
+    """Xác định thời gian trong ngày dựa trên giờ hiện tại"""
     hour = datetime.now().hour
     if 5 <= hour < 12:
         return "morning"
@@ -94,36 +80,25 @@ def get_time_of_day():
         return "night"
 
 def update_background_color(root):
-    """Cập nhật màu nền và màu chữ dựa trên thời gian"""
-    time_of_day = get_time_of_day()
-    bg_color = BACKGROUND_COLORS[time_of_day]
-    text_color = TEXT_COLORS[time_of_day]
+    """Cập nhật màu nền của cửa sổ dựa trên thời gian"""
+    time_category = get_time_of_day()
+    bg_color = BACKGROUND_COLORS[time_category]
+    text_color = TEXT_COLORS[time_category]
     
     # Cập nhật màu nền cho root window
     root.configure(fg_color=bg_color)
     
-    # Hàm đệ quy để cập nhật màu nền và màu chữ cho tất cả các widget con
-    def apply_colors_recursively(widget, current_bg_color, current_text_color):
-        try:
-            if hasattr(widget, 'configure'):
-                if 'fg_color' in widget.configure().keys():
-                    widget.configure(fg_color=current_bg_color)
-                if 'text_color' in widget.configure().keys():
-                    widget.configure(text_color=current_text_color)
-        except Exception:
-            # Bỏ qua các widget không có thuộc tính fg_color hoặc text_color
-            pass
-        
-        for child in widget.winfo_children():
-            apply_colors_recursively(child, current_bg_color, current_text_color)
-
-    apply_colors_recursively(root, bg_color, text_color)
+    # Cập nhật màu chữ cho tất cả các widget con
+    for widget in root.winfo_children():
+        if isinstance(widget, (ctk.CTkLabel, ctk.CTkButton)):
+            widget.configure(text_color=text_color)
 
 class MainWindow(ctk.CTkFrame):
     def __init__(self, parent, initial_focus: str = None):
         super().__init__(parent)
+        self.logger = logging.getLogger(__name__)
         try:
-            logger.debug("Bắt đầu khởi tạo MainWindow...")
+            self.logger.debug("Bắt đầu khởi tạo MainWindow...")
             self.parent = parent
             
             # Lấy màu nền và màu chữ ban đầu
@@ -143,7 +118,7 @@ class MainWindow(ctk.CTkFrame):
             self.db.log_app_launch()
 
             # Khởi tạo các service và controller
-            logger.debug("Khởi tạo các service và controller...")
+            self.logger.debug("Khởi tạo các service và controller...")
             self.scheduler = SchedulerService()
             self.weather_service = WeatherService(self.db)
             self.gemini_service = GeminiErrorCorrectionService()
@@ -156,13 +131,13 @@ class MainWindow(ctk.CTkFrame):
             self.rule_suggester = RuleSuggester(self.db, self.knowledge_base)
 
             # Thiết lập cửa sổ chính
-            logger.debug("Thiết lập cửa sổ chính...")
+            self.logger.debug("Thiết lập cửa sổ chính...")
             self.parent.title("My AI Assistant")
             self.parent.geometry("800x600")
             self.parent.resizable(False, False)
 
             # Tạo main frame để chứa các frame con
-            logger.debug("Tạo main frame...")
+            self.logger.debug("Tạo main frame...")
             self.main_frame = ctk.CTkFrame(
                 self,
                 fg_color=initial_bg_color
@@ -191,11 +166,11 @@ class MainWindow(ctk.CTkFrame):
             self.update_colors()
 
             # Chạy suy luận ngay khi khởi động
-            logger.info("Khởi chạy hệ chuyên gia...")
+            self.logger.info("Khởi chạy hệ chuyên gia...")
             self._run_expert_system_inference()
 
         except Exception as e:
-            logger.error(f"Lỗi khởi tạo MainWindow: {str(e)}")
+            self.logger.error(f"Lỗi khởi tạo MainWindow: {str(e)}")
             messagebox.showerror("Lỗi", f"Không thể khởi tạo ứng dụng: {str(e)}")
 
     def create_frames(self):
@@ -221,7 +196,7 @@ class MainWindow(ctk.CTkFrame):
         self.weather_frame.grid(row=2, column=0, sticky="nsew", padx=10, pady=5)
 
         # Frame thời khóa biểu
-        self.schedule_frame = ScheduleFrame(self.scrollable_frame)
+        self.schedule_frame = ScheduleFrame(self.scrollable_frame, self.db, self._collect_facts)
         self.schedule_frame.grid(row=3, column=0, sticky="nsew", padx=10, pady=5)
 
         # Frame VSCode
@@ -260,13 +235,13 @@ class MainWindow(ctk.CTkFrame):
 
     def _run_expert_system_inference(self):
         """Thu thập dữ kiện, chạy suy luận và xử lý kết quả."""
-        logger.debug("Bắt đầu chạy suy luận hệ chuyên gia...")
+        self.logger.debug("Bắt đầu chạy suy luận hệ chuyên gia...")
         
         facts = self._collect_facts()
-        logger.debug(f"Facts thu thập được: {facts}")
+        self.logger.debug(f"Facts thu thập được: {facts}")
         
         activated_actions = self.inference_engine.run_inference(facts)
-        logger.debug(f"Các hành động được kích hoạt: {activated_actions}")
+        self.logger.debug(f"Các hành động được kích hoạt: {activated_actions}")
 
         if activated_actions:
             # Hiển thị lời khuyên trên giao diện
@@ -280,7 +255,7 @@ class MainWindow(ctk.CTkFrame):
                     # Thêm các hành động khác nếu cần
             
             recommendation_text = "\n".join(recommendation_messages)
-            logger.debug(f"Đang cập nhật recommendation_label với text: {recommendation_text}")
+            self.logger.debug(f"Đang cập nhật recommendation_label với text: {recommendation_text}")
             
             # Đảm bảo label được cấu hình đúng
             self.recommendation_label.configure(
@@ -290,9 +265,9 @@ class MainWindow(ctk.CTkFrame):
                 wraplength=700,
                 justify="left"
             )
-            logger.debug("Đã cập nhật recommendation_label")
+            self.logger.debug("Đã cập nhật recommendation_label")
         else:
-            logger.debug("Không có hành động nào được kích hoạt, xóa text cũ")
+            self.logger.debug("Không có hành động nào được kích hoạt, xóa text cũ")
             self.recommendation_label.configure(text="")
 
         # Lên lịch chạy lại sau 1 phút
@@ -301,13 +276,13 @@ class MainWindow(ctk.CTkFrame):
     def _collect_facts(self) -> dict:
         """Thu thập các dữ kiện hiện tại của hệ thống."""
         facts = {}
-        logger.debug("Bắt đầu thu thập facts...")
+        self.logger.debug("Bắt đầu thu thập facts...")
         
         # Thu thập dữ kiện thời gian
         now = datetime.now()
         hour = now.hour
         day_of_week = now.strftime("%A") # Ví dụ: Monday, Tuesday
-        logger.debug(f"Thời gian hiện tại: {now}, Giờ: {hour}, Ngày: {day_of_week}")
+        self.logger.debug(f"Thời gian hiện tại: {now}, Giờ: {hour}, Ngày: {day_of_week}")
         
         if 5 <= hour < 12:
             facts["time_category"] = "morning"
@@ -317,31 +292,31 @@ class MainWindow(ctk.CTkFrame):
             facts["time_category"] = "evening"
         else:
             facts["time_category"] = "night"
-        logger.debug(f"Phân loại thời gian: {facts['time_category']}")
+        self.logger.debug(f"Phân loại thời gian: {facts['time_category']}")
         
         # Thêm ngày trong tuần vào facts
         facts["day_of_week"] = day_of_week
-        logger.debug(f"Ngày trong tuần: {day_of_week}")
+        self.logger.debug(f"Ngày trong tuần: {day_of_week}")
 
         # Thu thập dữ kiện thời tiết
         weather_data = self.weather_service.get_weather()
         if weather_data:
             facts["weather_condition"] = weather_data.get('description', '').lower()
-            logger.debug(f"Dữ liệu thời tiết: {weather_data}")
-            logger.debug(f"Điều kiện thời tiết: {facts['weather_condition']}")
+            self.logger.debug(f"Dữ liệu thời tiết: {weather_data}")
+            self.logger.debug(f"Điều kiện thời tiết: {facts['weather_condition']}")
         else:
-            logger.warning("Không lấy được dữ liệu thời tiết")
+            self.logger.warning("Không lấy được dữ liệu thời tiết")
 
         # Thu thập dữ kiện lịch trình
         schedule_data = self.schedule_controller.get_schedule_data()
         if schedule_data is not None and not schedule_data.empty:
-            logger.debug(f"Dữ liệu lịch trình: {schedule_data}")
+            self.logger.debug(f"Dữ liệu lịch trình: {schedule_data}")
             today_schedule = schedule_data.get(day_of_week, pd.Series()).astype(str).str.lower()
-            logger.debug(f"Lịch trình hôm nay ({day_of_week}): {today_schedule}")
+            self.logger.debug(f"Lịch trình hôm nay ({day_of_week}): {today_schedule}")
             
             if "gym" in " ".join(today_schedule.tolist()):
                 facts["schedule_activity"] = "Gym"
-                logger.debug("Phát hiện hoạt động Gym trong lịch trình")
+                self.logger.debug("Phát hiện hoạt động Gym trong lịch trình")
             
             is_empty_or_flexible = True
             for item in today_schedule:
@@ -349,15 +324,15 @@ class MainWindow(ctk.CTkFrame):
                     is_empty_or_flexible = False
                     break
             facts["schedule_empty_or_flexible"] = is_empty_or_flexible
-            logger.debug(f"Lịch trình trống/linh hoạt: {is_empty_or_flexible}")
+            self.logger.debug(f"Lịch trình trống/linh hoạt: {is_empty_or_flexible}")
         else:
-            logger.warning("Không lấy được dữ liệu lịch trình")
+            self.logger.warning("Không lấy được dữ liệu lịch trình")
 
         # Thu thập dữ kiện trạng thái VSCode
         facts["vscode_status"] = "closed" # Placeholder
-        logger.debug(f"Trạng thái VSCode: {facts['vscode_status']}")
+        self.logger.debug(f"Trạng thái VSCode: {facts['vscode_status']}")
 
-        logger.debug(f"Tổng hợp tất cả facts: {facts}")
+        self.logger.debug(f"Tổng hợp tất cả facts: {facts}")
         return facts
 
     def update_colors(self):
@@ -365,25 +340,37 @@ class MainWindow(ctk.CTkFrame):
         update_background_color(self.parent)
         self.parent.after(60000, self.update_colors)  # Cập nhật mỗi phút
 
+def check_internet_connection():
+    """Kiểm tra kết nối internet"""
+    try:
+        socket.create_connection(("8.8.8.8", 53), timeout=3)
+        return True
+    except OSError:
+        return False
+
 def main():
     try:
+        # Thiết lập logging
+        setup_logging()
+        logger = logging.getLogger(__name__)
+        
         # Kiểm tra kết nối internet
         if not check_internet_connection():
             messagebox.showwarning("Cảnh báo", "Không có kết nối internet!")
             return
 
-        # Quản lý file log
-        manage_log_file()
-
         # Tạo cửa sổ chính
         root = ctk.CTk()
         app = MainWindow(root)
         app.pack(fill="both", expand=True)
+        
+        # Chạy ứng dụng
         root.mainloop()
-
+        
     except Exception as e:
         logger.error(f"Lỗi trong hàm main: {str(e)}")
-        messagebox.showerror("Lỗi", f"Đã xảy ra lỗi: {str(e)}")
+        messagebox.showerror("Lỗi", f"Không thể khởi động ứng dụng: {str(e)}")
+        sys.exit(1)
 
 if __name__ == "__main__":
     main() 
