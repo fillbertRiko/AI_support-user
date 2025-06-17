@@ -1,0 +1,9 @@
+[
+  {
+    "timestamp": "2025-06-17T23:44:48.668537",
+    "error_type": "ModuleNotFoundError",
+    "message": "No module named 'services.fact_collector'",
+    "traceback": "NoneType: None\n",
+    "context": {}
+  }
+]
