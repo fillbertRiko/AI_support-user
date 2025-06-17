@@ -4,10 +4,10 @@ import pandas as pd
 from controllers.vscode_controller import VSCodeController
 
 class VSCodeFrame(ctk.CTkFrame):
-    def __init__(self, parent, db, fact_collector):
+    def __init__(self, parent):
         super().__init__(parent, fg_color="transparent")
         self.parent = parent
-        self.controller = VSCodeController(db, fact_collector)
+        self.controller = VSCodeController()
         
         # Tạo các widget
         self.create_widgets()
@@ -37,40 +37,6 @@ class VSCodeFrame(ctk.CTkFrame):
         
         # Hiển thị dữ liệu
         self.display_settings()
-
-        # Phần đánh giá code Gemini
-        self.code_review_label = ctk.CTkLabel(
-            self,
-            text="Đánh Giá Mã với Gemini",
-            font=("Montserrat", 16, "bold")
-        )
-        self.code_review_label.pack(pady=10)
-
-        self.code_input_textbox = ctk.CTkTextbox(
-            self,
-            height=150,
-            font=("Montserrat", 12)
-        )
-        self.code_input_textbox.pack(fill="x", padx=10, pady=5)
-        self.code_input_textbox.insert("0.0", "Dán mã của bạn vào đây để được Gemini đánh giá...")
-
-        self.review_button = ctk.CTkButton(
-            self,
-            text="Đánh Giá Mã",
-            command=self.review_code,
-            font=("Montserrat", 14, "bold"),
-            fg_color="#28A745", # Màu xanh lá cây
-            hover_color="#218838"
-        )
-        self.review_button.pack(pady=5)
-
-        self.review_output_textbox = ctk.CTkTextbox(
-            self,
-            height=200,
-            font=("Montserrat", 12),
-            state="disabled" # Make it read-only initially
-        )
-        self.review_output_textbox.pack(fill="x", padx=10, pady=5)
 
     def open_vscode(self):
         """Mở VSCode"""
@@ -102,30 +68,3 @@ class VSCodeFrame(ctk.CTkFrame):
                         font=("Montserrat", 12)
                     )
                     label.grid(row=i+1, column=j, padx=5, pady=5)
-
-    def review_code(self):
-        """Gửi mã đi để được đánh giá bởi Gemini"""
-        code_to_review = self.code_input_textbox.get("1.0", "end-1c")
-        if not code_to_review or code_to_review.strip() == "Dán mã của bạn vào đây để được Gemini đánh giá...":
-            messagebox.showwarning("Cảnh báo", "Vui lòng nhập mã để đánh giá.")
-            return
-        
-        self.review_output_textbox.configure(state="normal")
-        self.review_output_textbox.delete("1.0", "end")
-        self.review_output_textbox.insert("1.0", "Đang gửi mã đến Gemini để đánh giá... Vui lòng chờ.")
-        self.review_output_textbox.configure(state="disabled")
-        
-        # Run the review in a separate thread to prevent UI freezing
-        # For simplicity, directly call here. In a real app, use threading/async.
-        try:
-            review_result = self.controller.review_code_with_gemini(code_to_review)
-            self.review_output_textbox.configure(state="normal")
-            self.review_output_textbox.delete("1.0", "end")
-            self.review_output_textbox.insert("1.0", review_result)
-            self.review_output_textbox.configure(state="disabled")
-        except Exception as e:
-            messagebox.showerror("Lỗi", f"Có lỗi xảy ra khi đánh giá mã: {str(e)}")
-            self.review_output_textbox.configure(state="normal")
-            self.review_output_textbox.delete("1.0", "end")
-            self.review_output_textbox.insert("1.0", "Không thể đánh giá mã. Vui lòng thử lại.")
-            self.review_output_textbox.configure(state="disabled") 

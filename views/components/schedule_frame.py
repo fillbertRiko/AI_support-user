@@ -7,10 +7,10 @@ from tkinter import messagebox
 logger = logging.getLogger(__name__)
 
 class ScheduleFrame(ctk.CTkFrame):
-    def __init__(self, parent):
+    def __init__(self, parent, db, fact_collector):
         super().__init__(parent, fg_color="transparent")
         self.parent = parent
-        self.controller = ScheduleController()
+        self.controller = ScheduleController(db, fact_collector)
         self.grid_columnconfigure(0, weight=1) # Cấu hình cột chính để mở rộng
         self.grid_rowconfigure(0, weight=1)    # Cấu hình hàng chính để mở rộng
         

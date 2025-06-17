@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch, MagicMock
 import os
-from src.services.gemini_error_correction_service import GeminiErrorCorrectionService
+from src.services.gemini_error_correction_service import GeminiErrorCorrectionService # type: ignore
 
 class TestGeminiErrorCorrectionService(unittest.TestCase):
     def setUp(self):

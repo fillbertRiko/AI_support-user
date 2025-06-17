@@ -1,5 +1,5 @@
 import unittest
-from src.utils.security import Security
+from src.utils.security import Security # type: ignore
 
 class TestSecurity(unittest.TestCase):
     def setUp(self):

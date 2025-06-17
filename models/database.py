@@ -264,7 +264,7 @@ class DatabaseManager:
             self.logger.info("App launch time logged.")
         except Exception as e:
             self.logger.error(f"Error logging app launch: {str(e)}")
-
+    
     def save_weather_data(self, weather_data: Dict[str, Any]) -> None:
         """Lưu dữ liệu thời tiết vào bảng weather_data."""
         with self.transaction():
@@ -288,8 +288,8 @@ class DatabaseManager:
                 weather_data.get('timestamp', datetime.now().timestamp())
             )
             self.execute_query(query, params)
-            self.logger.info("Weather data saved successfully.")
-
+        self.logger.info("Weather data saved successfully.")
+    
     def log_user_interaction(self, action_type: str, facts: Dict[str, Any]):
         """Ghi lại tương tác của người dùng cùng với các facts hiện tại."""
         try:

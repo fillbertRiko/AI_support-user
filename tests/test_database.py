@@ -2,7 +2,7 @@ import unittest
 import os
 import sqlite3
 from datetime import datetime, timedelta
-from src.core.database import DatabaseManager
+from src.core.database import DatabaseManager # type: ignore
 
 class TestDatabaseManager(unittest.TestCase):
     @classmethod
