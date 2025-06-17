@@ -1,29 +1,20 @@
-17/06/2025 14:00:19,77 - Starting MyAI application. 
---- Logging error ---
-Traceback (most recent call last):
-  File "H:\my_ai\main.py", line 376, in main
-    manage_log_file()
-    ~~~~~~~~~~~~~~~^^
-  File "H:\my_ai\main.py", line 69, in manage_log_file
-    os.rename(log_file_path, archive_name)
-    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'app.log' -> 'app_2025-06-16.log'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python313\Lib\logging\__init__.py", line 1154, in emit
-    stream.write(msg + self.terminator)
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Acer\AppData\Local\Programs\Python\Python313\Lib\encodings\cp1252.py", line 19, in encode
-    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-UnicodeEncodeError: 'charmap' codec can't encode character '\u1ed7' in position 46: character maps to <undefined>
-Call stack:
-  File "H:\my_ai\main.py", line 389, in <module>
-    main()
-  File "H:\my_ai\main.py", line 385, in main
-    logger.error(f"L\u1ed7i trong hàm main: {str(e)}")
-Message: "L\u1ed7i trong hàm main: [WinError 32] The process cannot access the file because it is being used by another process: 'app.log' -> 'app_2025-06-16.log'"
-Arguments: ()
-17/06/2025 14:00:41,03 - MyAI application started successfully. 
+2025-06-17 23:09:12.110976 - Starting MyAI application.
+2025-06-17 23:10:54.731732 - Starting MyAI application.
+2025-06-17 23:13:46.295716 - Starting MyAI application.
+2025-06-17 23:15:30.272766 - Starting MyAI application.
+2025-06-17 23:17:32.397923 - Starting MyAI application.
+2025-06-17 23:18:36.217208 - Starting MyAI application.
+2025-06-17 23:20:19.011954 - Starting MyAI application.
+2025-06-17 23:21:22.330934 - Starting MyAI application.
+2025-06-17 23:22:48.470532 - Starting MyAI application.
+2025-06-17 23:28:27.780452 - Starting MyAI application.
+2025-06-17 23:29:43.933300 - Starting MyAI application.
+2025-06-17 23:46:59.441965 - Starting MyAI application.
+2025-06-17 23:47:44.945342 - Starting MyAI application.
+2025-06-17 23:49:27.049329 - Starting MyAI application.
+2025-06-17 23:52:46.237840 - Starting MyAI application.
+2025-06-17 23:55:52.834131 - Starting MyAI application.
+2025-06-18 00:11:46.613235 - Starting MyAI application.
+2025-06-18 00:14:46.170332 - Starting MyAI application.
+2025-06-18 00:16:01.707548 - Starting MyAI application.
+2025-06-18 00:36:41.033166 - Starting MyAI application.

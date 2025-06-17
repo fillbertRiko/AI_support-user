@@ -1,174 +1,353 @@
-2025-06-17 14:10:16,331 - DatabaseManager - INFO - App launch time logged.
-2025-06-17 14:10:16,335 - models.knowledge_base - INFO - Loaded 4 rules from H:\my_ai\models\knowledge_base.json.
-2025-06-17 14:10:16,336 - controllers.inference_engine - INFO - Inference Engine initialized.
-2025-06-17 14:10:16,337 - controllers.rule_suggester - INFO - Rule Suggester initialized.
-2025-06-17 14:10:16,482 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
-2025-06-17 14:10:16,781 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Hanoi%2CVN&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi HTTP/1.1" 200 512
-2025-06-17 14:10:16,786 - DatabaseManager - INFO - Weather data saved successfully.
-2025-06-17 14:10:16,855 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
-2025-06-17 14:10:16,856 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 41 1741
-2025-06-17 14:11:57,572 - __main__ - DEBUG - Bắt đầu khởi tạo MainWindow...
-2025-06-17 14:11:57,598 - DatabaseManager - INFO - App launch time logged.
-2025-06-17 14:11:57,598 - __main__ - DEBUG - Khởi tạo các service và controller...
-2025-06-17 14:11:57,614 - models.knowledge_base - INFO - Loaded 4 rules from H:\my_ai\models\knowledge_base.json.
-2025-06-17 14:11:57,614 - controllers.inference_engine - INFO - Inference Engine initialized.
-2025-06-17 14:11:57,614 - controllers.rule_suggester - INFO - Rule Suggester initialized.
-2025-06-17 14:11:57,615 - __main__ - DEBUG - Thiết lập cửa sổ chính...
-2025-06-17 14:11:57,635 - __main__ - DEBUG - Tạo main frame...
-2025-06-17 14:11:57,654 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame...
-2025-06-17 14:11:57,663 - views.components.greeting_frame - DEBUG - Cập nhật lời chào và thời gian lần đầu...
-2025-06-17 14:11:57,663 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi chiều Dương Huy!
-2025-06-17 14:11:57,664 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:11:57
-2025-06-17 14:11:57,664 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi chiều Dương Huy!
-2025-06-17 14:11:57,664 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame hoàn tất.
-2025-06-17 14:11:57,705 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
-2025-06-17 14:11:57,987 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Hanoi%2CVN&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi HTTP/1.1" 200 512
-2025-06-17 14:11:57,988 - DatabaseManager - INFO - Weather data saved successfully.
-2025-06-17 14:11:57,989 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết từ WeatherService: {'temperature': 32, 'feels_like': 39, 'humidity': 70, 'pressure': 1003, 'description': 'mây đen u ám', 'icon': '04d', 'wind_speed': 3.62, 'clouds': 100, 'timestamp': 1750144317.987816}
-2025-06-17 14:11:57,989 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết nhận được: {'temperature': 32, 'feels_like': 39, 'humidity': 70, 'pressure': 1003, 'description': 'mây đen u ám', 'icon': '04d', 'wind_speed': 3.62, 'clouds': 100, 'timestamp': 1750144317.987816}
-2025-06-17 14:11:58,030 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
-2025-06-17 14:11:58,030 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 41 1741
-2025-06-17 14:11:58,069 - views.components.weather_frame - DEBUG - Cập nhật thông tin hàng đầu thành công.
-2025-06-17 14:11:58,070 - views.components.weather_frame - DEBUG - Cập nhật labels chính thành công.
-2025-06-17 14:11:58,071 - views.components.weather_frame - DEBUG - Cập nhật metrics thành công.
-2025-06-17 14:11:58,071 - views.components.weather_frame - DEBUG - Cập nhật mô tả dự báo hàng ngày thành công.
-2025-06-17 14:11:58,097 - __main__ - ERROR - Lỗi khởi tạo MainWindow: VSCodeFrame.__init__() takes 2 positional arguments but 4 were given
-2025-06-17 14:11:58,668 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:11:58
-2025-06-17 14:11:59,670 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:11:59
-2025-06-17 14:12:00,672 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:12:00
-2025-06-17 14:12:01,681 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:12:01
-2025-06-17 14:12:02,693 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:12:02
-2025-06-17 14:12:03,704 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:12:03
-2025-06-17 14:12:04,705 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:12:04
-2025-06-17 14:12:05,707 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:12:05
-2025-06-17 14:12:06,712 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:12:06
-2025-06-17 14:12:07,723 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:12:07
-2025-06-17 14:12:08,740 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:12:08
-2025-06-17 14:12:09,750 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:12:09
-2025-06-17 14:12:10,753 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:12:10
-2025-06-17 14:12:55,039 - __main__ - DEBUG - Bắt đầu khởi tạo MainWindow...
-2025-06-17 14:12:55,045 - DatabaseManager - INFO - App launch time logged.
-2025-06-17 14:12:55,045 - __main__ - DEBUG - Khởi tạo các service và controller...
-2025-06-17 14:12:55,046 - models.knowledge_base - INFO - Loaded 4 rules from H:\my_ai\models\knowledge_base.json.
-2025-06-17 14:12:55,047 - controllers.inference_engine - INFO - Inference Engine initialized.
-2025-06-17 14:12:55,047 - controllers.rule_suggester - INFO - Rule Suggester initialized.
-2025-06-17 14:12:55,047 - __main__ - DEBUG - Thiết lập cửa sổ chính...
-2025-06-17 14:12:55,071 - __main__ - DEBUG - Tạo main frame...
-2025-06-17 14:12:55,096 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame...
-2025-06-17 14:12:55,110 - views.components.greeting_frame - DEBUG - Cập nhật lời chào và thời gian lần đầu...
-2025-06-17 14:12:55,111 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi chiều Dương Huy!
-2025-06-17 14:12:55,112 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:12:55
-2025-06-17 14:12:55,112 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi chiều Dương Huy!
-2025-06-17 14:12:55,113 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame hoàn tất.
-2025-06-17 14:12:55,180 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
-2025-06-17 14:12:55,478 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Hanoi%2CVN&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi HTTP/1.1" 200 512
-2025-06-17 14:12:55,482 - DatabaseManager - INFO - Weather data saved successfully.
-2025-06-17 14:12:55,483 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết từ WeatherService: {'temperature': 32, 'feels_like': 39, 'humidity': 70, 'pressure': 1003, 'description': 'mây đen u ám', 'icon': '04d', 'wind_speed': 3.62, 'clouds': 100, 'timestamp': 1750144375.480355}
-2025-06-17 14:12:55,483 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết nhận được: {'temperature': 32, 'feels_like': 39, 'humidity': 70, 'pressure': 1003, 'description': 'mây đen u ám', 'icon': '04d', 'wind_speed': 3.62, 'clouds': 100, 'timestamp': 1750144375.480355}
-2025-06-17 14:12:55,506 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
-2025-06-17 14:12:55,506 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 41 1741
-2025-06-17 14:12:55,514 - views.components.weather_frame - DEBUG - Cập nhật thông tin hàng đầu thành công.
-2025-06-17 14:12:55,515 - views.components.weather_frame - DEBUG - Cập nhật labels chính thành công.
-2025-06-17 14:12:55,515 - views.components.weather_frame - DEBUG - Cập nhật metrics thành công.
-2025-06-17 14:12:55,516 - views.components.weather_frame - DEBUG - Cập nhật mô tả dự báo hàng ngày thành công.
-2025-06-17 14:12:55,810 - __main__ - INFO - Khởi chạy hệ chuyên gia...
-2025-06-17 14:12:55,811 - __main__ - DEBUG - Bắt đầu chạy suy luận hệ chuyên gia...
-2025-06-17 14:12:55,811 - __main__ - DEBUG - Bắt đầu thu thập facts...
-2025-06-17 14:12:55,811 - __main__ - DEBUG - Thời gian hiện tại: 2025-06-17 14:12:55.811721, Giờ: 14, Ngày: Tuesday
-2025-06-17 14:12:55,811 - __main__ - DEBUG - Phân loại thời gian: afternoon
-2025-06-17 14:12:55,812 - __main__ - DEBUG - Ngày trong tuần: Tuesday
-2025-06-17 14:12:55,812 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
-2025-06-17 14:12:55,994 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Hanoi%2CVN&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi HTTP/1.1" 200 512
-2025-06-17 14:12:55,998 - DatabaseManager - INFO - Weather data saved successfully.
-2025-06-17 14:12:55,998 - __main__ - DEBUG - Dữ liệu thời tiết: {'temperature': 32, 'feels_like': 39, 'humidity': 70, 'pressure': 1003, 'description': 'mây đen u ám', 'icon': '04d', 'wind_speed': 3.62, 'clouds': 100, 'timestamp': 1750144375.995755}
-2025-06-17 14:12:55,999 - __main__ - DEBUG - Điều kiện thời tiết: mây đen u ám
-2025-06-17 14:12:56,022 - __main__ - DEBUG - Dữ liệu lịch trình:        Thời gian  ...                              Chủ Nhật
-0  06:00 – 08:00  ...         Ôn tập nhanh tất cả\nmôn (2h)
-1  08:30 – 10:30  ...  Hoàn thiện dự án\nnhỏ hàng tuần (2h)
-2  14:00 – 16:00  ...          Buffer & ôn chuyên\nsâu (2h)
-3  16:30 – 18:00  ...                   Nghỉ/nghỉ linh hoạt
-4  20:00 – 22:00  ...        20:00 – 21:30: Gym\n(tùy chọn)
+2025-06-17 23:49:27,049 - __main__ - INFO - Khởi động ứng dụng MyAI...
+2025-06-17 23:49:27,125 - __main__ - DEBUG - Đang tạo cửa sổ chính...
+2025-06-17 23:49:27,285 - __main__ - DEBUG - Đang khởi tạo MainWindow...
+2025-06-17 23:49:27,291 - __main__ - ERROR - Error in _update_loading: 'config' is not implemented for CTk widgets. For consistency, always use 'configure' instead.
+Traceback (most recent call last):
+  File "H:\my_ai\main.py", line 160, in _update_loading
+    self.loading_label.config(text=message)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "H:\my_ai\.venv\Lib\site-packages\customtkinter\windows\widgets\core_widget_classes\ctk_base_class.py", line 111, in config
+    raise AttributeError("'config' is not implemented for CTk widgets. For consistency, always use 'configure' instead.")
+AttributeError: 'config' is not implemented for CTk widgets. For consistency, always use 'configure' instead.
+2025-06-17 23:49:27,293 - __main__ - ERROR - Lỗi khởi tạo MainWindow: DatabaseManager.__new__() takes 1 positional argument but 2 were given
+Traceback (most recent call last):
+  File "H:\my_ai\main.py", line 130, in __init__
+    self.db = DatabaseManager(os.path.join('data', 'database', 'database.db'))
+              ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DatabaseManager.__new__() takes 1 positional argument but 2 were given
+2025-06-17 23:49:27,318 - __main__ - ERROR - Lỗi khởi tạo MainWindow: DatabaseManager.__new__() takes 1 positional argument but 2 were given
+Traceback (most recent call last):
+  File "H:\my_ai\main.py", line 423, in main
+    app = MainWindow(root, loading_window, loading_label, progress_bar)
+  File "H:\my_ai\main.py", line 130, in __init__
+    self.db = DatabaseManager(os.path.join('data', 'database', 'database.db'))
+              ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DatabaseManager.__new__() takes 1 positional argument but 2 were given
+2025-06-17 23:49:28,844 - __main__ - INFO - Đóng ứng dụng MyAI...
+2025-06-17 23:52:46,237 - __main__ - INFO - Khởi động ứng dụng MyAI...
+2025-06-17 23:52:46,298 - __main__ - DEBUG - Đang tạo cửa sổ chính...
+2025-06-17 23:52:46,458 - __main__ - DEBUG - Đang khởi tạo MainWindow...
+2025-06-17 23:52:46,472 - models.database - INFO - Khởi tạo DatabaseManager...
+2025-06-17 23:52:46,473 - models.database - DEBUG - Tạo kết nối ban đầu...
+2025-06-17 23:52:46,473 - models.database - DEBUG - Thiết lập các tùy chọn SQLite...
+2025-06-17 23:52:46,474 - models.database - DEBUG - Tạo các bảng...
+2025-06-17 23:52:46,474 - models.database - DEBUG - Bắt đầu tạo các bảng...
+2025-06-17 23:52:46,474 - models.database - DEBUG - Tạo các index...
+2025-06-17 23:52:46,474 - models.database - INFO - Đã tạo các bảng và index thành công
+2025-06-17 23:52:46,474 - models.database - DEBUG - Khởi tạo connection pool...
+2025-06-17 23:52:46,474 - models.database - DEBUG - Khởi tạo cache...
+2025-06-17 23:52:46,474 - models.database - INFO - DatabaseManager đã được khởi tạo thành công
+2025-06-17 23:52:46,474 - __main__ - ERROR - Lỗi khởi tạo MainWindow: 'DatabaseManager' object has no attribute 'initialize_database'
+Traceback (most recent call last):
+  File "H:\my_ai\main.py", line 131, in __init__
+    self.db.initialize_database()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DatabaseManager' object has no attribute 'initialize_database'
+2025-06-17 23:52:46,501 - __main__ - ERROR - Lỗi khởi tạo MainWindow: 'DatabaseManager' object has no attribute 'initialize_database'
+Traceback (most recent call last):
+  File "H:\my_ai\main.py", line 423, in main
+    app = MainWindow(root, loading_window, loading_label, progress_bar)
+  File "H:\my_ai\main.py", line 131, in __init__
+    self.db.initialize_database()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DatabaseManager' object has no attribute 'initialize_database'
+2025-06-17 23:52:48,904 - __main__ - INFO - Đóng ứng dụng MyAI...
+2025-06-17 23:55:52,834 - __main__ - INFO - Khởi động ứng dụng MyAI...
+2025-06-17 23:55:52,909 - __main__ - DEBUG - Đang tạo cửa sổ chính...
+2025-06-17 23:55:53,137 - __main__ - DEBUG - Đang khởi tạo MainWindow...
+2025-06-17 23:55:53,150 - models.database - INFO - Khởi tạo DatabaseManager...
+2025-06-17 23:55:53,151 - models.database - DEBUG - Tạo kết nối ban đầu...
+2025-06-17 23:55:53,152 - models.database - DEBUG - Thiết lập các tùy chọn SQLite...
+2025-06-17 23:55:53,154 - models.database - DEBUG - Tạo các bảng...
+2025-06-17 23:55:53,154 - models.database - DEBUG - Bắt đầu tạo các bảng...
+2025-06-17 23:55:53,154 - models.database - DEBUG - Tạo các index...
+2025-06-17 23:55:53,155 - models.database - INFO - Đã tạo các bảng và index thành công
+2025-06-17 23:55:53,155 - models.database - DEBUG - Khởi tạo connection pool...
+2025-06-17 23:55:53,155 - models.database - DEBUG - Khởi tạo cache...
+2025-06-17 23:55:53,155 - models.database - INFO - DatabaseManager đã được khởi tạo thành công
+2025-06-17 23:55:53,171 - __main__ - ERROR - Lỗi khởi tạo MainWindow: 'MainWindow' object has no attribute 'protocol'
+Traceback (most recent call last):
+  File "H:\my_ai\main.py", line 142, in __init__
+    self.protocol("WM_DELETE_WINDOW", self._on_closing)
+    ^^^^^^^^^^^^^
+AttributeError: 'MainWindow' object has no attribute 'protocol'
+2025-06-17 23:55:53,200 - __main__ - ERROR - Lỗi khởi tạo MainWindow: 'MainWindow' object has no attribute 'protocol'
+Traceback (most recent call last):
+  File "H:\my_ai\main.py", line 422, in main
+    app = MainWindow(root, loading_window, loading_label, progress_bar)
+  File "H:\my_ai\main.py", line 142, in __init__
+    self.protocol("WM_DELETE_WINDOW", self._on_closing)
+    ^^^^^^^^^^^^^
+AttributeError: 'MainWindow' object has no attribute 'protocol'
+2025-06-17 23:55:53,414 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame...
+2025-06-17 23:55:53,423 - views.components.greeting_frame - DEBUG - Cập nhật lời chào và thời gian lần đầu...
+2025-06-17 23:55:53,423 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-17 23:55:53,424 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-17 23:55:53,424 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame hoàn tất.
+2025-06-17 23:55:53,463 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
+2025-06-17 23:55:53,765 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Hanoi&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi HTTP/1.1" 200 526
+2025-06-17 23:55:53,768 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết từ WeatherService: {'city': 'Hanoi', 'temperature': 27, 'description': 'mưa nhẹ', 'humidity': 81, 'wind_speed': 2.8}
+2025-06-17 23:55:53,768 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết nhận được: {'city': 'Hanoi', 'temperature': 27, 'description': 'mưa nhẹ', 'humidity': 81, 'wind_speed': 2.8}
+2025-06-17 23:55:53,787 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-06-17 23:55:53,787 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 41 1741
+2025-06-17 23:55:53,791 - views.components.weather_frame - DEBUG - Cập nhật thông tin hàng đầu thành công.
+2025-06-17 23:55:53,792 - views.components.weather_frame - DEBUG - Cập nhật labels chính thành công.
+2025-06-17 23:55:53,792 - views.components.weather_frame - DEBUG - Cập nhật metrics thành công.
+2025-06-17 23:55:53,792 - views.components.weather_frame - DEBUG - Cập nhật mô tả dự báo hàng ngày thành công.
+2025-06-17 23:55:54,509 - __main__ - INFO - Đóng ứng dụng MyAI...
+2025-06-18 00:11:46,614 - __main__ - INFO - Khởi động ứng dụng MyAI...
+2025-06-18 00:11:46,666 - __main__ - DEBUG - Đang tạo cửa sổ chính...
+2025-06-18 00:11:46,894 - __main__ - DEBUG - Đang khởi tạo MainWindow...
+2025-06-18 00:11:46,907 - models.database - INFO - Khởi tạo DatabaseManager...
+2025-06-18 00:11:46,907 - models.database - DEBUG - Tạo kết nối ban đầu...
+2025-06-18 00:11:46,907 - models.database - DEBUG - Thiết lập các tùy chọn SQLite...
+2025-06-18 00:11:46,908 - models.database - DEBUG - Tạo các bảng...
+2025-06-18 00:11:46,908 - models.database - DEBUG - Bắt đầu tạo các bảng...
+2025-06-18 00:11:46,908 - models.database - DEBUG - Tạo các index...
+2025-06-18 00:11:46,908 - models.database - INFO - Đã tạo các bảng và index thành công
+2025-06-18 00:11:46,908 - models.database - DEBUG - Khởi tạo connection pool...
+2025-06-18 00:11:46,908 - models.database - DEBUG - Khởi tạo cache...
+2025-06-18 00:11:46,908 - models.database - INFO - DatabaseManager đã được khởi tạo thành công
+2025-06-18 00:11:46,924 - __main__ - INFO - Ứng dụng đã sẵn sàng!
+2025-06-18 00:11:47,245 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame...
+2025-06-18 00:11:47,259 - views.components.greeting_frame - DEBUG - Cập nhật lời chào và thời gian lần đầu...
+2025-06-18 00:11:47,259 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-18 00:11:47,259 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-18 00:11:47,259 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame hoàn tất.
+2025-06-18 00:11:47,428 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
+2025-06-18 00:11:47,705 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Hanoi&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi HTTP/1.1" 200 514
+2025-06-18 00:11:47,707 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết từ WeatherService: {'city': 'Hanoi', 'temperature': 27, 'description': 'mây đen u ám', 'humidity': 81, 'wind_speed': 2.8}
+2025-06-18 00:11:47,707 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết nhận được: {'city': 'Hanoi', 'temperature': 27, 'description': 'mây đen u ám', 'humidity': 81, 'wind_speed': 2.8}
+2025-06-18 00:11:47,756 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-06-18 00:11:47,756 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 41 1741
+2025-06-18 00:11:47,778 - views.components.weather_frame - DEBUG - Cập nhật thông tin hàng đầu thành công.
+2025-06-18 00:11:47,780 - views.components.weather_frame - DEBUG - Cập nhật labels chính thành công.
+2025-06-18 00:11:47,780 - views.components.weather_frame - DEBUG - Cập nhật metrics thành công.
+2025-06-18 00:11:47,781 - views.components.weather_frame - DEBUG - Cập nhật mô tả dự báo hàng ngày thành công.
+2025-06-18 00:11:49,455 - __main__ - ERROR - Lỗi trong _initialize_services_deferred: ErrorCorrectionService.__init__() takes 1 positional argument but 2 were given
+Traceback (most recent call last):
+  File "H:\my_ai\main.py", line 316, in _initialize_services_deferred
+    self.error_correction_service = ErrorCorrectionService(self.db)
+                                    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: ErrorCorrectionService.__init__() takes 1 positional argument but 2 were given
+2025-06-18 00:12:00,493 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 00:12:00
+2025-06-18 00:14:46,170 - __main__ - INFO - Khởi động ứng dụng MyAI...
+2025-06-18 00:14:46,224 - __main__ - DEBUG - Đang tạo cửa sổ chính...
+2025-06-18 00:14:46,415 - __main__ - DEBUG - Đang khởi tạo MainWindow...
+2025-06-18 00:14:46,434 - models.database - INFO - Khởi tạo DatabaseManager...
+2025-06-18 00:14:46,435 - models.database - DEBUG - Tạo kết nối ban đầu...
+2025-06-18 00:14:46,435 - models.database - DEBUG - Thiết lập các tùy chọn SQLite...
+2025-06-18 00:14:46,436 - models.database - DEBUG - Tạo các bảng...
+2025-06-18 00:14:46,436 - models.database - DEBUG - Bắt đầu tạo các bảng...
+2025-06-18 00:14:46,436 - models.database - DEBUG - Tạo các index...
+2025-06-18 00:14:46,436 - models.database - INFO - Đã tạo các bảng và index thành công
+2025-06-18 00:14:46,436 - models.database - DEBUG - Khởi tạo connection pool...
+2025-06-18 00:14:46,436 - models.database - DEBUG - Khởi tạo cache...
+2025-06-18 00:14:46,436 - models.database - INFO - DatabaseManager đã được khởi tạo thành công
+2025-06-18 00:14:46,446 - __main__ - INFO - Ứng dụng đã sẵn sàng!
+2025-06-18 00:14:46,719 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame...
+2025-06-18 00:14:46,726 - views.components.greeting_frame - DEBUG - Cập nhật lời chào và thời gian lần đầu...
+2025-06-18 00:14:46,726 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-18 00:14:46,726 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-18 00:14:46,726 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame hoàn tất.
+2025-06-18 00:14:46,808 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
+2025-06-18 00:14:47,160 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Hanoi&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi HTTP/1.1" 200 514
+2025-06-18 00:14:47,167 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết từ WeatherService: {'city': 'Hanoi', 'temperature': 27, 'description': 'mây đen u ám', 'humidity': 81, 'wind_speed': 2.8}
+2025-06-18 00:14:47,168 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết nhận được: {'city': 'Hanoi', 'temperature': 27, 'description': 'mây đen u ám', 'humidity': 81, 'wind_speed': 2.8}
+2025-06-18 00:14:47,203 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-06-18 00:14:47,203 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 41 1741
+2025-06-18 00:14:47,210 - views.components.weather_frame - DEBUG - Cập nhật thông tin hàng đầu thành công.
+2025-06-18 00:14:47,211 - views.components.weather_frame - DEBUG - Cập nhật labels chính thành công.
+2025-06-18 00:14:47,211 - views.components.weather_frame - DEBUG - Cập nhật metrics thành công.
+2025-06-18 00:14:47,212 - views.components.weather_frame - DEBUG - Cập nhật mô tả dự báo hàng ngày thành công.
+2025-06-18 00:14:48,023 - __main__ - ERROR - Lỗi trong _initialize_services_deferred: ErrorCorrectionService.__init__() takes 1 positional argument but 2 were given
+Traceback (most recent call last):
+  File "H:\my_ai\main.py", line 316, in _initialize_services_deferred
+    self.error_correction_service = ErrorCorrectionService(self.db)
+                                    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+TypeError: ErrorCorrectionService.__init__() takes 1 positional argument but 2 were given
+2025-06-18 00:16:01,707 - __main__ - INFO - Khởi động ứng dụng MyAI...
+2025-06-18 00:16:01,787 - __main__ - DEBUG - Đang tạo cửa sổ chính...
+2025-06-18 00:16:01,944 - __main__ - DEBUG - Đang khởi tạo MainWindow...
+2025-06-18 00:16:01,960 - models.database - INFO - Khởi tạo DatabaseManager...
+2025-06-18 00:16:01,960 - models.database - DEBUG - Tạo kết nối ban đầu...
+2025-06-18 00:16:01,961 - models.database - DEBUG - Thiết lập các tùy chọn SQLite...
+2025-06-18 00:16:01,962 - models.database - DEBUG - Tạo các bảng...
+2025-06-18 00:16:01,962 - models.database - DEBUG - Bắt đầu tạo các bảng...
+2025-06-18 00:16:01,963 - models.database - DEBUG - Tạo các index...
+2025-06-18 00:16:01,963 - models.database - INFO - Đã tạo các bảng và index thành công
+2025-06-18 00:16:01,963 - models.database - DEBUG - Khởi tạo connection pool...
+2025-06-18 00:16:01,963 - models.database - DEBUG - Khởi tạo cache...
+2025-06-18 00:16:01,963 - models.database - INFO - DatabaseManager đã được khởi tạo thành công
+2025-06-18 00:16:01,989 - __main__ - INFO - Ứng dụng đã sẵn sàng!
+2025-06-18 00:16:02,346 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame...
+2025-06-18 00:16:02,356 - views.components.greeting_frame - DEBUG - Cập nhật lời chào và thời gian lần đầu...
+2025-06-18 00:16:02,357 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-18 00:16:02,358 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-18 00:16:02,358 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame hoàn tất.
+2025-06-18 00:16:02,467 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
+2025-06-18 00:16:02,760 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Hanoi&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi HTTP/1.1" 200 514
+2025-06-18 00:16:02,761 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết từ WeatherService: {'city': 'Hanoi', 'temperature': 27, 'description': 'mây đen u ám', 'humidity': 81, 'wind_speed': 2.8}
+2025-06-18 00:16:02,761 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết nhận được: {'city': 'Hanoi', 'temperature': 27, 'description': 'mây đen u ám', 'humidity': 81, 'wind_speed': 2.8}
+2025-06-18 00:16:02,782 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-06-18 00:16:02,782 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 41 1741
+2025-06-18 00:16:02,791 - views.components.weather_frame - DEBUG - Cập nhật thông tin hàng đầu thành công.
+2025-06-18 00:16:02,792 - views.components.weather_frame - DEBUG - Cập nhật labels chính thành công.
+2025-06-18 00:16:02,792 - views.components.weather_frame - DEBUG - Cập nhật metrics thành công.
+2025-06-18 00:16:02,792 - views.components.weather_frame - DEBUG - Cập nhật mô tả dự báo hàng ngày thành công.
+2025-06-18 00:16:03,666 - __main__ - ERROR - Lỗi trong _initialize_services_deferred: KnowledgeBase.__init__() takes 1 positional argument but 3 were given
+Traceback (most recent call last):
+  File "H:\my_ai\main.py", line 326, in _initialize_services_deferred
+    self.knowledge_base = KnowledgeBase(os.path.join('models', 'knowledge_base.json'), self.db)
+                          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: KnowledgeBase.__init__() takes 1 positional argument but 3 were given
+2025-06-18 00:17:00,183 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 00:17:00
+2025-06-18 00:18:00,715 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 00:18:00
+2025-06-18 00:19:00,599 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 00:19:00
+2025-06-18 00:35:01,523 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
+2025-06-18 00:35:01,550 - services.weather_service - ERROR - Lỗi khi lấy thông tin thời tiết: HTTPConnectionPool(host='api.openweathermap.org', port=80): Max retries exceeded with url: /data/2.5/weather?q=Hanoi&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021BBBE0C550>: Failed to establish a new connection: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions'))
+Traceback (most recent call last):
+  File "H:\my_ai\.venv\Lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "H:\my_ai\.venv\Lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "H:\my_ai\.venv\Lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+PermissionError: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions
 
-[5 rows x 8 columns]
-2025-06-17 14:12:56,023 - __main__ - DEBUG - Lịch trình hôm nay (Tuesday): Series([], dtype: object)
-2025-06-17 14:12:56,023 - __main__ - DEBUG - Lịch trình trống/linh hoạt: True
-2025-06-17 14:12:56,024 - __main__ - DEBUG - Trạng thái VSCode: closed
-2025-06-17 14:12:56,024 - __main__ - DEBUG - Tổng hợp tất cả facts: {'time_category': 'afternoon', 'day_of_week': 'Tuesday', 'weather_condition': 'mây đen u ám', 'schedule_empty_or_flexible': True, 'vscode_status': 'closed'}
-2025-06-17 14:12:56,025 - __main__ - DEBUG - Facts thu thập được: {'time_category': 'afternoon', 'day_of_week': 'Tuesday', 'weather_condition': 'mây đen u ám', 'schedule_empty_or_flexible': True, 'vscode_status': 'closed'}
-2025-06-17 14:12:56,025 - controllers.inference_engine - INFO - Bắt đầu suy luận với facts: {'time_category': 'afternoon', 'day_of_week': 'Tuesday', 'weather_condition': 'mây đen u ám', 'schedule_empty_or_flexible': True, 'vscode_status': 'closed'}
-2025-06-17 14:12:56,025 - controllers.inference_engine - INFO - Số lượng quy tắc: 4
-2025-06-17 14:12:56,026 - controllers.inference_engine - INFO - 
-Đánh giá quy tắc: rule_1_rainy_gym
-2025-06-17 14:12:56,026 - controllers.inference_engine - INFO - Mô tả: Nếu trời mưa và có lịch tập Gym, đề xuất mang ô/áo mưa.
-2025-06-17 14:12:56,026 - controllers.inference_engine - INFO - Đánh giá điều kiện: weather_condition contains mưa
-2025-06-17 14:12:56,026 - controllers.inference_engine - INFO - Giá trị thực tế: mây đen u ám
-2025-06-17 14:12:56,027 - controllers.inference_engine - DEBUG - Đánh giá điều kiện: fact_value=mây đen u ám, operator=contains, condition_value=mưa
-2025-06-17 14:12:56,027 - controllers.inference_engine - DEBUG - Kết quả đánh giá: False
-2025-06-17 14:12:56,028 - controllers.inference_engine - INFO - Điều kiện không thỏa mãn cho quy tắc 'rule_1_rainy_gym'
-2025-06-17 14:12:56,028 - controllers.inference_engine - INFO - Quy tắc 'rule_1_rainy_gym' không được kích hoạt
-2025-06-17 14:12:56,028 - controllers.inference_engine - INFO - 
-Đánh giá quy tắc: rule_2_morning_vscode
-2025-06-17 14:12:56,029 - controllers.inference_engine - INFO - Mô tả: Nếu là buổi sáng và VSCode chưa mở, đề xuất mở VSCode.
-2025-06-17 14:12:56,029 - controllers.inference_engine - INFO - Đánh giá điều kiện: time_category == morning
-2025-06-17 14:12:56,029 - controllers.inference_engine - INFO - Giá trị thực tế: afternoon
-2025-06-17 14:12:56,029 - controllers.inference_engine - DEBUG - Đánh giá điều kiện: fact_value=afternoon, operator===, condition_value=morning
-2025-06-17 14:12:56,029 - controllers.inference_engine - DEBUG - Kết quả đánh giá: False
-2025-06-17 14:12:56,030 - controllers.inference_engine - INFO - Điều kiện không thỏa mãn cho quy tắc 'rule_2_morning_vscode'
-2025-06-17 14:12:56,030 - controllers.inference_engine - INFO - Quy tắc 'rule_2_morning_vscode' không được kích hoạt
-2025-06-17 14:12:56,030 - controllers.inference_engine - INFO - 
-Đánh giá quy tắc: rule_3_weekend_relax
-2025-06-17 14:12:56,030 - controllers.inference_engine - INFO - Mô tả: Nếu là cuối tuần và không có lịch trình cụ thể, đề xuất nghỉ ngơi/giải trí.
-2025-06-17 14:12:56,030 - controllers.inference_engine - INFO - Đánh giá điều kiện: day_of_week in ['Saturday', 'Sunday']
-2025-06-17 14:12:56,031 - controllers.inference_engine - INFO - Giá trị thực tế: Tuesday
-2025-06-17 14:12:56,031 - controllers.inference_engine - DEBUG - Đánh giá điều kiện: fact_value=Tuesday, operator=in, condition_value=['Saturday', 'Sunday']
-2025-06-17 14:12:56,031 - controllers.inference_engine - DEBUG - Kết quả đánh giá: False
-2025-06-17 14:12:56,031 - controllers.inference_engine - INFO - Điều kiện không thỏa mãn cho quy tắc 'rule_3_weekend_relax'
-2025-06-17 14:12:56,031 - controllers.inference_engine - INFO - Quy tắc 'rule_3_weekend_relax' không được kích hoạt
-2025-06-17 14:12:56,031 - controllers.inference_engine - INFO - 
-Đánh giá quy tắc: rule_4_afternoon_break
-2025-06-17 14:12:56,031 - controllers.inference_engine - INFO - Mô tả: Nếu là buổi chiều và lịch trình trống, đề xuất nghỉ ngơi.
-2025-06-17 14:12:56,031 - controllers.inference_engine - INFO - Đánh giá điều kiện: time_category == afternoon
-2025-06-17 14:12:56,031 - controllers.inference_engine - INFO - Giá trị thực tế: afternoon
-2025-06-17 14:12:56,031 - controllers.inference_engine - DEBUG - Đánh giá điều kiện: fact_value=afternoon, operator===, condition_value=afternoon
-2025-06-17 14:12:56,032 - controllers.inference_engine - DEBUG - Kết quả đánh giá: True
-2025-06-17 14:12:56,032 - controllers.inference_engine - INFO - Đánh giá điều kiện: schedule_empty_or_flexible == True
-2025-06-17 14:12:56,032 - controllers.inference_engine - INFO - Giá trị thực tế: True
-2025-06-17 14:12:56,033 - controllers.inference_engine - DEBUG - Đánh giá điều kiện: fact_value=True, operator===, condition_value=True
-2025-06-17 14:12:56,033 - controllers.inference_engine - DEBUG - Kết quả đánh giá: True
-2025-06-17 14:12:56,034 - controllers.inference_engine - INFO - Quy tắc 'rule_4_afternoon_break' được kích hoạt
-2025-06-17 14:12:56,035 - controllers.inference_engine - INFO - Thêm hành động: {'type': 'recommendation', 'message': 'Buổi chiều rảnh rỗi, bạn có thể nghỉ ngơi một chút để lấy lại năng lượng!', 'rule_description': 'Nếu là buổi chiều và lịch trình trống, đề xuất nghỉ ngơi.'}
-2025-06-17 14:12:56,036 - controllers.inference_engine - INFO - Kết thúc suy luận. Số hành động được kích hoạt: 1
-2025-06-17 14:12:56,037 - __main__ - DEBUG - Các hành động được kích hoạt: [{'type': 'recommendation', 'message': 'Buổi chiều rảnh rỗi, bạn có thể nghỉ ngơi một chút để lấy lại năng lượng!', 'rule_description': 'Nếu là buổi chiều và lịch trình trống, đề xuất nghỉ ngơi.'}]
-2025-06-17 14:12:56,037 - __main__ - DEBUG - Đang cập nhật recommendation_label với text: Buổi chiều rảnh rỗi, bạn có thể nghỉ ngơi một chút để lấy lại năng lượng! (Quy tắc: Nếu là buổi chiều và lịch trình trống, đề xuất nghỉ ngơi.)
-2025-06-17 14:12:56,054 - __main__ - DEBUG - Đã cập nhật recommendation_label
-2025-06-17 14:12:56,341 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:12:56
-2025-06-17 14:12:57,344 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:12:57
-2025-06-17 14:12:58,345 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:12:58
-2025-06-17 14:12:59,347 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:12:59
-2025-06-17 14:13:00,350 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:13:00
-2025-06-17 14:13:01,358 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:13:01
-2025-06-17 14:13:02,368 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:13:02
-2025-06-17 14:13:03,370 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:13:03
-2025-06-17 14:13:04,376 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:13:04
-2025-06-17 14:13:05,377 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:13:05
-2025-06-17 14:13:06,380 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:13:06
-2025-06-17 14:13:07,385 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:13:07
-2025-06-17 14:13:08,398 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:13:08
-2025-06-17 14:13:09,400 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:13:09
-2025-06-17 14:13:09,722 - views.components.knowledge_editor_frame - INFO - Displayed all current rules.
-2025-06-17 14:13:10,411 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:13:10
-2025-06-17 14:13:11,414 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:13:11
-2025-06-17 14:13:12,416 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:13:12
-2025-06-17 14:13:13,431 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:13:13
-2025-06-17 14:13:14,441 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:13:14
-2025-06-17 14:13:15,446 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:13:15
-2025-06-17 14:13:16,458 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:13:16
-2025-06-17 14:13:17,463 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:13:17
-2025-06-17 14:13:18,467 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:13:18
-2025-06-17 14:13:19,480 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:13:19
-2025-06-17 14:13:20,481 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:13:20
-2025-06-17 14:13:21,483 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:13:21
-2025-06-17 14:13:22,494 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:13:22
-2025-06-17 14:13:23,507 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:13:23
-2025-06-17 14:13:24,508 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:13:24
-2025-06-17 14:13:25,524 - views.components.greeting_frame - DEBUG - Cập nhật time_label với text: 14:13:25
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "H:\my_ai\.venv\Lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "H:\my_ai\.venv\Lib\site-packages\urllib3\connectionpool.py", line 493, in _make_request
+    conn.request(
+    ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<6 lines>...
+        enforce_content_length=enforce_content_length,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "H:\my_ai\.venv\Lib\site-packages\urllib3\connection.py", line 445, in request
+    self.endheaders()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 1093, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "C:\Users\Acer\AppData\Local\Programs\Python\Python313\Lib\http\client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "H:\my_ai\.venv\Lib\site-packages\urllib3\connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ~~~~~~~~~~~~~~^^
+  File "H:\my_ai\.venv\Lib\site-packages\urllib3\connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+        self, f"Failed to establish a new connection: {e}"
+    ) from e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000021BBBE0C550>: Failed to establish a new connection: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "H:\my_ai\.venv\Lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "H:\my_ai\.venv\Lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "H:\my_ai\.venv\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='api.openweathermap.org', port=80): Max retries exceeded with url: /data/2.5/weather?q=Hanoi&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021BBBE0C550>: Failed to establish a new connection: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "H:\my_ai\services\weather_service.py", line 53, in get_weather
+    response = requests.get(url)
+  File "H:\my_ai\.venv\Lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "H:\my_ai\.venv\Lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "H:\my_ai\.venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "H:\my_ai\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "H:\my_ai\.venv\Lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='api.openweathermap.org', port=80): Max retries exceeded with url: /data/2.5/weather?q=Hanoi&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021BBBE0C550>: Failed to establish a new connection: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions'))
+2025-06-18 00:35:01,661 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết từ WeatherService: None
+2025-06-18 00:36:41,033 - __main__ - INFO - Khởi động ứng dụng MyAI...
+2025-06-18 00:36:41,095 - __main__ - DEBUG - Đang tạo cửa sổ chính...
+2025-06-18 00:36:41,242 - __main__ - DEBUG - Đang khởi tạo MainWindow...
+2025-06-18 00:36:41,258 - models.database - INFO - Khởi tạo DatabaseManager...
+2025-06-18 00:36:41,259 - models.database - DEBUG - Tạo kết nối ban đầu...
+2025-06-18 00:36:41,259 - models.database - DEBUG - Thiết lập các tùy chọn SQLite...
+2025-06-18 00:36:41,260 - models.database - DEBUG - Tạo các bảng...
+2025-06-18 00:36:41,260 - models.database - DEBUG - Bắt đầu tạo các bảng...
+2025-06-18 00:36:41,260 - models.database - DEBUG - Tạo các index...
+2025-06-18 00:36:41,260 - models.database - INFO - Đã tạo các bảng và index thành công
+2025-06-18 00:36:41,260 - models.database - DEBUG - Khởi tạo connection pool...
+2025-06-18 00:36:41,260 - models.database - DEBUG - Khởi tạo cache...
+2025-06-18 00:36:41,260 - models.database - INFO - DatabaseManager đã được khởi tạo thành công
+2025-06-18 00:36:41,274 - __main__ - INFO - Ứng dụng đã sẵn sàng!
+2025-06-18 00:36:41,635 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame...
+2025-06-18 00:36:41,641 - views.components.greeting_frame - DEBUG - Cập nhật lời chào và thời gian lần đầu...
+2025-06-18 00:36:41,642 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-18 00:36:41,642 - views.components.greeting_frame - DEBUG - Cập nhật greeting_label với text: Chào buổi tối Dương Huy!
+2025-06-18 00:36:41,642 - views.components.greeting_frame - DEBUG - Khởi tạo GreetingFrame hoàn tất.
+2025-06-18 00:36:41,729 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): api.openweathermap.org:80
+2025-06-18 00:36:41,965 - urllib3.connectionpool - DEBUG - http://api.openweathermap.org:80 "GET /data/2.5/weather?q=Hanoi&appid=1cfcda7a3ee2a0f49e546a462ef6851b&units=metric&lang=vi HTTP/1.1" 200 514
+2025-06-18 00:36:41,967 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết từ WeatherService: {'city': 'Hanoi', 'temperature': 27, 'description': 'mây đen u ám', 'humidity': 81, 'wind_speed': 2.8}
+2025-06-18 00:36:41,967 - views.components.weather_frame - DEBUG - Dữ liệu thời tiết nhận được: {'city': 'Hanoi', 'temperature': 27, 'description': 'mây đen u ám', 'humidity': 81, 'wind_speed': 2.8}
+2025-06-18 00:36:41,983 - PIL.PngImagePlugin - DEBUG - STREAM b'IHDR' 16 13
+2025-06-18 00:36:41,983 - PIL.PngImagePlugin - DEBUG - STREAM b'IDAT' 41 1741
+2025-06-18 00:36:41,991 - views.components.weather_frame - DEBUG - Cập nhật thông tin hàng đầu thành công.
+2025-06-18 00:36:41,992 - views.components.weather_frame - DEBUG - Cập nhật labels chính thành công.
+2025-06-18 00:36:41,992 - views.components.weather_frame - DEBUG - Cập nhật metrics thành công.
+2025-06-18 00:36:41,992 - views.components.weather_frame - DEBUG - Cập nhật mô tả dự báo hàng ngày thành công.
+2025-06-18 00:36:42,760 - models.knowledge_base - INFO - Loaded 4 rules from H:\my_ai\models\knowledge_base.json.
+2025-06-18 00:36:42,760 - controllers.inference_engine - INFO - Inference Engine initialized.
+2025-06-18 00:36:42,760 - controllers.rule_suggester - INFO - Rule Suggester initialized.
+2025-06-18 00:36:42,762 - __main__ - INFO - Bắt đầu suy luận hệ chuyên gia...
+2025-06-18 00:36:42,763 - services.fact_collector - ERROR - Lỗi khi thu thập dữ liệu từ cơ sở dữ liệu: 'DatabaseManager' object has no attribute 'get_schedule_for_day'
+Traceback (most recent call last):
+  File "H:\my_ai\services\fact_collector.py", line 32, in collect_facts
+    schedule = self.db.get_schedule_for_day(day_of_week)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DatabaseManager' object has no attribute 'get_schedule_for_day'
+2025-06-18 00:36:42,763 - __main__ - INFO - Các sự kiện thu thập được: {'time_category': 'night', 'day_of_week': 'Wednesday', 'current_hour': 0}
+2025-06-18 00:36:42,764 - __main__ - ERROR - Lỗi khi chạy suy luận hệ chuyên gia: 'RuleSuggester' object has no attribute 'infer_rules'
+Traceback (most recent call last):
+  File "H:\my_ai\main.py", line 178, in _run_expert_system_inference
+    recommendations = self.rule_suggester.infer_rules(facts)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'RuleSuggester' object has no attribute 'infer_rules'
+2025-06-18 00:36:44,430 - __main__ - INFO - Cập nhật thời gian: 00:36:44
+2025-06-18 00:36:44,430 - __main__ - ERROR - Error in update_colors: 'config' is not implemented for CTk widgets. For consistency, always use 'configure' instead.
+Traceback (most recent call last):
+  File "H:\my_ai\main.py", line 210, in update_colors
+    self.main_frame.config(bg='#f0f0f0') # Example color
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "H:\my_ai\.venv\Lib\site-packages\customtkinter\windows\widgets\core_widget_classes\ctk_base_class.py", line 111, in config
+    raise AttributeError("'config' is not implemented for CTk widgets. For consistency, always use 'configure' instead.")
+AttributeError: 'config' is not implemented for CTk widgets. For consistency, always use 'configure' instead.

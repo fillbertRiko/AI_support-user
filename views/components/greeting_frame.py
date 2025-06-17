@@ -10,57 +10,86 @@ logger = logging.getLogger(__name__)
 class GreetingFrame(ctk.CTkFrame):
     def __init__(self, parent):
         super().__init__(parent, fg_color="transparent")
-        logger.debug("Khởi tạo GreetingFrame...")
+        self.parent = parent
+        self.logger = logging.getLogger(__name__)
+        self.logger.debug("Khởi tạo GreetingFrame...")
         self.update_optimizer = UpdateOptimizerService()
         self.error_correction_service = ErrorCorrectionService()
         self.last_greeting = None
         self.last_update_time = None
         self.user_interaction = False
         
-        # Tạo frame chính
-        self.main_frame = ctk.CTkFrame(self)
+        # Tạo frame chính với hiệu ứng gradient
+        self.main_frame = ctk.CTkFrame(
+            self,
+            fg_color=("gray90", "gray13"),  # Màu sáng/tối tùy theme
+            corner_radius=15
+        )
         self.main_frame.pack(fill="both", expand=True, padx=10, pady=10)
         
-        # Tạo frame cho lời chào
-        self.greeting_container = ctk.CTkFrame(self.main_frame)
+        # Tạo frame cho lời chào với hiệu ứng shadow
+        self.greeting_container = ctk.CTkFrame(
+            self.main_frame,
+            fg_color=("gray85", "gray15"),
+            corner_radius=10
+        )
         self.greeting_container.pack(fill="both", expand=True, padx=10, pady=10)
         
-        # Tạo đường kẻ trên
-        self.top_line = ctk.CTkFrame(self.greeting_container, height=2)
+        # Tạo đường kẻ trên với gradient
+        self.top_line = ctk.CTkFrame(
+            self.greeting_container,
+            height=2,
+            fg_color=("gray70", "gray30")
+        )
         self.top_line.pack(fill="x", padx=20, pady=(10, 5))
         
-        # Label cho lời chào
+        # Label cho lời chào với font đẹp hơn
         self.greeting_label = ctk.CTkLabel(
             self.greeting_container,
             text="",
-            font=("Montserrat", 20, "bold"),
+            font=("Montserrat", 24, "bold"),
+            text_color=("gray20", "gray90"),
             anchor="center",
-            wraplength=600  # Giới hạn chiều rộng tối đa
+            wraplength=600
         )
         self.greeting_label.pack(fill="x", padx=20, pady=5)
         
-        # Label cho thời gian
+        # Label cho thời gian với hiệu ứng số lớn
         self.time_label = ctk.CTkLabel(
             self.greeting_container,
             text="",
-            font=("Montserrat", 36, "bold"),
+            font=("Montserrat", 48, "bold"),
+            text_color=("gray20", "gray90"),
             anchor="center"
         )
         self.time_label.pack(fill="x", padx=20, pady=5)
         
-        # Tạo đường kẻ dưới
-        self.bottom_line = ctk.CTkFrame(self.greeting_container, height=2)
+        # Tạo đường kẻ dưới với gradient
+        self.bottom_line = ctk.CTkFrame(
+            self.greeting_container,
+            height=2,
+            fg_color=("gray70", "gray30")
+        )
         self.bottom_line.pack(fill="x", padx=20, pady=(5, 10))
         
+        # Thêm hiệu ứng hover cho frame
+        self.bind("<Enter>", self._on_enter)
+        self.bind("<Leave>", self._on_leave)
+        
         logger.debug("Cập nhật lời chào và thời gian lần đầu...")
-        # Cập nhật lần đầu
         self.update_greeting()
         self.update_time()
-        
-        # Lên lịch cập nhật
         self.schedule_updates()
         logger.debug("Khởi tạo GreetingFrame hoàn tất.")
+
+    def _on_enter(self, event):
+        """Hiệu ứng khi hover vào frame"""
+        self.main_frame.configure(fg_color=("gray85", "gray15"))
         
+    def _on_leave(self, event):
+        """Hiệu ứng khi rời khỏi frame"""
+        self.main_frame.configure(fg_color=("gray90", "gray13"))
+
     def get_greeting(self):
         """Lấy lời chào dựa trên thời gian trong ngày"""
         hour = datetime.now().hour
@@ -98,7 +127,7 @@ class GreetingFrame(ctk.CTkFrame):
             
             # Cập nhật giao diện
             self.greeting_label.configure(text=greeting)
-            logger.debug(f"Cập nhật greeting_label với text: {greeting}")
+            self.logger.debug(f"Cập nhật greeting_label với text: {greeting}")
             
             # Lưu dữ liệu hiện tại
             self.last_greeting = greeting
@@ -125,7 +154,9 @@ class GreetingFrame(ctk.CTkFrame):
         """Cập nhật thời gian"""
         current_time = datetime.now().strftime("%H:%M:%S")
         self.time_label.configure(text=current_time)
-        logger.debug(f"Cập nhật time_label với text: {current_time}")
+        # Chỉ log khi thời gian thay đổi phút
+        if current_time.endswith(":00"):
+            self.logger.debug(f"Cập nhật time_label với text: {current_time}")
         # Lên lịch cập nhật thời gian mỗi giây
         self.after(1000, self.update_time)
 
