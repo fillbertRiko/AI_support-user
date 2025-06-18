@@ -198,45 +198,84 @@ class WeatherFrame(ctk.CTkFrame):
 
     def get_or_download_weather_icon(self, icon_code: str) -> ctk.CTkImage | None:
         """Lấy biểu tượng thời tiết từ cache hoặc tải xuống nếu chưa có."""
-        icon_path = os.path.join(self.icon_cache_dir, f"{icon_code}.png")
-
-        if os.path.exists(icon_path):
-            try:
-                return ctk.CTkImage(Image.open(icon_path), size=(50, 50))
-            except Exception as e:
-                logger.error(f"Lỗi khi tải biểu tượng cục bộ {icon_path}: {e}")
-                # Xóa file bị lỗi để thử tải lại
-                os.remove(icon_path)
-
-        # Nếu không có hoặc lỗi, tải xuống từ API
         try:
-            icon_url = f"https://openweathermap.org/img/wn/{icon_code}@2x.png"
-            response = requests.get(icon_url)
-            response.raise_for_status() # Nâng ngoại lệ cho mã trạng thái lỗi
+            icon_path = os.path.join(self.icon_cache_dir, f"{icon_code}.png")
 
-            image_data = response.content
-            image = Image.open(io.BytesIO(image_data))
-            image.save(icon_path) # Lưu icon vào cache
+            if os.path.exists(icon_path):
+                try:
+                    image = Image.open(icon_path)
+                    return ctk.CTkImage(image, size=(50, 50))
+                except Exception as e:
+                    logger.error(f"Lỗi khi tải biểu tượng cục bộ {icon_path}: {e}")
+                    # Xóa file bị lỗi để thử tải lại
+                    try:
+                        os.remove(icon_path)
+                    except:
+                        pass
 
-            logger.info(f"Đã tải và lưu biểu tượng {icon_code}.png vào {icon_path}")
-            return ctk.CTkImage(image, size=(50, 50))
+            # Nếu không có hoặc lỗi, tải xuống từ API
+            try:
+                icon_url = f"https://openweathermap.org/img/wn/{icon_code}@2x.png"
+                response = requests.get(icon_url, timeout=10)
+                response.raise_for_status() # Nâng ngoại lệ cho mã trạng thái lỗi
 
-        except requests.exceptions.RequestException as e:
-            logger.error(f"Lỗi khi tải biểu tượng thời tiết {icon_code} từ API: {e}")
+                image_data = response.content
+                image = Image.open(io.BytesIO(image_data))
+                
+                # Lưu icon vào cache
+                try:
+                    image.save(icon_path)
+                    logger.info(f"Đã tải và lưu biểu tượng {icon_code}.png vào {icon_path}")
+                except Exception as e:
+                    logger.warning(f"Không thể lưu icon {icon_code}: {e}")
+                
+                return ctk.CTkImage(image, size=(50, 50))
+
+            except requests.exceptions.RequestException as e:
+                logger.error(f"Lỗi khi tải biểu tượng thời tiết {icon_code} từ API: {e}")
+            except Exception as e:
+                logger.error(f"Lỗi xử lý hình ảnh biểu tượng {icon_code}: {e}")
+                
         except Exception as e:
-            logger.error(f"Lỗi xử lý hình ảnh biểu tượng {icon_code}: {e}")
+            logger.error(f"Lỗi tổng quát khi xử lý icon {icon_code}: {e}")
+            
         return None
 
     def update_weather_icon(self, icon_code: str):
         """Cập nhật biểu tượng thời tiết trên giao diện."""
-        # Sử dụng phương thức mới để lấy hoặc tải icon
-        icon_image = self.get_or_download_weather_icon(icon_code)
+        try:
+            # Kiểm tra xem icon_label có tồn tại và được khởi tạo đúng không
+            if not hasattr(self, 'icon_label'):
+                logger.warning("icon_label chưa được khởi tạo, bỏ qua cập nhật icon")
+                return
+                
+            if not self.icon_label.winfo_exists():
+                logger.warning("icon_label không tồn tại, bỏ qua cập nhật icon")
+                return
+                
+            # Sử dụng phương thức mới để lấy hoặc tải icon
+            icon_image = self.get_or_download_weather_icon(icon_code)
 
-        if icon_image:
-            self.icon_label.configure(image=icon_image, text="")
-        else:
-            self.icon_label.configure(text="N/A", image=None)
-            logger.warning(f"Không tìm thấy hoặc không thể tải biểu tượng thời tiết cho mã: {icon_code}")
+            if icon_image:
+                # Kiểm tra lại một lần nữa trước khi configure
+                if self.icon_label.winfo_exists():
+                    try:
+                        self.icon_label.configure(image=icon_image, text="")
+                        logger.debug(f"Đã cập nhật icon thời tiết thành công: {icon_code}")
+                    except Exception as e:
+                        logger.error(f"Lỗi khi configure icon_label: {e}")
+                else:
+                    logger.warning("icon_label đã bị destroy, bỏ qua cập nhật")
+            else:
+                if self.icon_label.winfo_exists():
+                    try:
+                        self.icon_label.configure(text="N/A", image=None)
+                        logger.warning(f"Không tìm thấy hoặc không thể tải biểu tượng thời tiết cho mã: {icon_code}")
+                    except Exception as e:
+                        logger.error(f"Lỗi khi configure icon_label với text: {e}")
+        except Exception as e:
+            logger.error(f"Lỗi khi cập nhật icon thời tiết: {e}")
+            # Không làm gì nếu có lỗi, tránh crash ứng dụng
 
     def update_top_info(self, temp: Any, description: str, icon: str):
         """Cập nhật nhiệt độ, mô tả và biểu tượng chính."""
@@ -301,15 +340,14 @@ class WeatherFrame(ctk.CTkFrame):
                 logger.debug("Cập nhật labels chính thành công.")
 
                 # Cập nhật metrics
-                clouds = weather_data.get('clouds', 'N/A')
                 visibility = weather_data.get('visibility', 'N/A') # Thêm tầm nhìn
-                dew_point = weather_data.get('dew_point', 'N/A') # Thêm điểm sương (giả định có)
+                dew_point = weather_data.get('dew_point', 'N/A') # Thêm điểm sương
 
                 # Chuyển đổi tầm nhìn từ mét sang km
                 visibility_km = round(float(visibility) / 1000, 1) if isinstance(visibility, (int, float)) else 'N/A'
 
                 self.update_metrics(
-                    clouds=clouds, # Clouds hiện tại là 'tầm nhìn' trong ảnh mẫu, cần điều chỉnh lại data mapping
+                    clouds='N/A', # Không sử dụng clouds cho tầm nhìn
                     visibility=visibility_km,
                     dew_point=dew_point
                 )
