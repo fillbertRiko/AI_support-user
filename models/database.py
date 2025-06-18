@@ -14,17 +14,27 @@ logger = logging.getLogger(__name__)
 class DatabaseManager:
     _instance = None
     _initialized = False
+    _db_path = None
     
-    def __new__(cls):
+    def __new__(cls, db_path=None):
         if cls._instance is None:
             cls._instance = super(DatabaseManager, cls).__new__(cls)
+            cls._db_path = db_path
+        elif db_path is not None and db_path != cls._db_path:
+            # Nếu truyền db_path mới, cập nhật lại
+            cls._db_path = db_path
         return cls._instance
     
-    def __init__(self):
+    def __init__(self, db_path=None):
         if not self._initialized:
             try:
                 logger.info("Khởi tạo DatabaseManager...")
-                self.db_path = os.path.join('data', 'database', 'myai.db')
+                if db_path is not None:
+                    self.db_path = db_path
+                elif self._db_path is not None:
+                    self.db_path = self._db_path
+                else:
+                    self.db_path = os.path.join('data', 'database', 'myai.db')
                 
                 # Đảm bảo thư mục tồn tại
                 os.makedirs(os.path.dirname(self.db_path), exist_ok=True)
@@ -128,14 +138,24 @@ class DatabaseManager:
                 )
             ''')
             
+            # Bảng schedule
+            self.conn.execute('''
+                CREATE TABLE IF NOT EXISTS schedule (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    day_of_week TEXT NOT NULL,
+                    start_time TEXT NOT NULL,
+                    end_time TEXT NOT NULL,
+                    subject TEXT NOT NULL,
+                    location TEXT
+                )
+            ''')
+            
+            # Cập nhật schema cho tất cả các bảng nếu cần
+            self._update_all_table_schemas()
+            
             # Tạo các index
             logger.debug("Tạo các index...")
-            self.conn.execute('CREATE INDEX IF NOT EXISTS idx_reminders_due_date ON reminders(due_date)')
-            self.conn.execute('CREATE INDEX IF NOT EXISTS idx_reminders_status ON reminders(status)')
-            self.conn.execute('CREATE INDEX IF NOT EXISTS idx_weather_city ON weather_data(city)')
-            self.conn.execute('CREATE INDEX IF NOT EXISTS idx_weather_timestamp ON weather_data(timestamp)')
-            self.conn.execute('CREATE INDEX IF NOT EXISTS idx_api_cache_endpoint ON api_cache(endpoint)')
-            self.conn.execute('CREATE INDEX IF NOT EXISTS idx_api_cache_timestamp ON api_cache(timestamp)')
+            self._create_indexes_safely()
             
             # Commit các thay đổi
             self.conn.commit()
@@ -144,6 +164,119 @@ class DatabaseManager:
         except Exception as e:
             logger.error(f"Lỗi tạo bảng: {str(e)}", exc_info=True)
             raise DatabaseError(f"Không thể tạo các bảng: {str(e)}")
+    
+    def _update_all_table_schemas(self):
+        """Cập nhật schema cho tất cả các bảng nếu cần thiết"""
+        try:
+            # Định nghĩa schema mong muốn cho từng bảng
+            expected_schemas = {
+                'weather_data': {
+                    'city': 'TEXT DEFAULT "Unknown"',
+                    'temperature': 'REAL',
+                    'description': 'TEXT',
+                    'humidity': 'INTEGER',
+                    'wind_speed': 'REAL',
+                    'pressure': 'REAL',
+                    'visibility': 'INTEGER',
+                    'dew_point': 'REAL',
+                    'feels_like': 'REAL',
+                    'temp_min': 'REAL',
+                    'temp_max': 'REAL',
+                    'timestamp': 'TEXT DEFAULT CURRENT_TIMESTAMP'
+                },
+                'api_cache': {
+                    'endpoint': 'TEXT NOT NULL',
+                    'response': 'TEXT NOT NULL',
+                    'timestamp': 'TEXT DEFAULT CURRENT_TIMESTAMP'
+                },
+                'user_interactions_log': {
+                    'interaction_type': 'TEXT NOT NULL',
+                    'details': 'TEXT',
+                    'timestamp': 'TEXT DEFAULT CURRENT_TIMESTAMP'
+                }
+            }
+            
+            for table_name, expected_columns in expected_schemas.items():
+                self._update_table_schema(table_name, expected_columns)
+                
+        except Exception as e:
+            logger.warning(f"Không thể cập nhật schema cho tất cả bảng: {str(e)}")
+    
+    def _update_table_schema(self, table_name, expected_columns):
+        """Cập nhật schema cho một bảng cụ thể"""
+        try:
+            # Kiểm tra xem bảng có tồn tại không
+            cursor = self.conn.execute(f"SELECT name FROM sqlite_master WHERE type='table' AND name='{table_name}'")
+            if cursor.fetchone():
+                # Bảng đã tồn tại, kiểm tra các cột
+                cursor = self.conn.execute(f"PRAGMA table_info({table_name})")
+                existing_columns = {column[1]: column[2] for column in cursor.fetchall()}
+                
+                # Thêm các cột thiếu
+                for column_name, column_def in expected_columns.items():
+                    if column_name not in existing_columns:
+                        logger.info(f"Cập nhật schema bảng {table_name}: thêm cột {column_name}")
+                        try:
+                            self.conn.execute(f"ALTER TABLE {table_name} ADD COLUMN {column_name} {column_def}")
+                        except Exception as e:
+                            logger.warning(f"Không thể thêm cột {column_name} vào bảng {table_name}: {str(e)}")
+                
+                self.conn.commit()
+                logger.info(f"Đã cập nhật schema cho bảng {table_name}")
+        except Exception as e:
+            logger.warning(f"Không thể cập nhật schema cho bảng {table_name}: {str(e)}")
+    
+    def _create_indexes_safely(self):
+        """Tạo các index một cách an toàn, bỏ qua nếu có lỗi"""
+        try:
+            self.conn.execute('CREATE INDEX IF NOT EXISTS idx_reminders_due_date ON reminders(due_date)')
+        except Exception as e:
+            logger.warning(f"Không thể tạo index idx_reminders_due_date: {str(e)}")
+        
+        try:
+            self.conn.execute('CREATE INDEX IF NOT EXISTS idx_reminders_status ON reminders(status)')
+        except Exception as e:
+            logger.warning(f"Không thể tạo index idx_reminders_status: {str(e)}")
+        
+        try:
+            self.conn.execute('CREATE INDEX IF NOT EXISTS idx_weather_city ON weather_data(city)')
+        except Exception as e:
+            logger.warning(f"Không thể tạo index idx_weather_city: {str(e)}")
+        
+        try:
+            self.conn.execute('CREATE INDEX IF NOT EXISTS idx_weather_timestamp ON weather_data(timestamp)')
+        except Exception as e:
+            logger.warning(f"Không thể tạo index idx_weather_timestamp: {str(e)}")
+        
+        try:
+            self.conn.execute('CREATE INDEX IF NOT EXISTS idx_api_cache_endpoint ON api_cache(endpoint)')
+        except Exception as e:
+            logger.warning(f"Không thể tạo index idx_api_cache_endpoint: {str(e)}")
+        
+        try:
+            self.conn.execute('CREATE INDEX IF NOT EXISTS idx_api_cache_timestamp ON api_cache(timestamp)')
+        except Exception as e:
+            logger.warning(f"Không thể tạo index idx_api_cache_timestamp: {str(e)}")
+    
+    def _update_weather_data_schema(self):
+        """Cập nhật schema của bảng weather_data nếu cần thiết"""
+        try:
+            # Kiểm tra xem bảng weather_data có tồn tại không
+            cursor = self.conn.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='weather_data'")
+            if cursor.fetchone():
+                # Bảng đã tồn tại, kiểm tra xem có cột city không
+                cursor = self.conn.execute("PRAGMA table_info(weather_data)")
+                columns = [column[1] for column in cursor.fetchall()]
+                
+                if 'city' not in columns:
+                    logger.info("Cập nhật schema bảng weather_data: thêm cột city")
+                    # Thêm cột city vào bảng hiện tại
+                    self.conn.execute("ALTER TABLE weather_data ADD COLUMN city TEXT DEFAULT 'Unknown'")
+                    self.conn.commit()
+                    logger.info("Đã thêm cột city vào bảng weather_data")
+        except Exception as e:
+            logger.warning(f"Không thể cập nhật schema weather_data: {str(e)}")
+            # Không raise exception vì đây không phải lỗi nghiêm trọng
     
     def get_connection(self):
         """Lấy một kết nối từ pool"""
@@ -245,16 +378,18 @@ class DatabaseManager:
         """Xóa toàn bộ cache"""
         self.cache.clear()
     
-    def close_all(self):
-        """Đóng tất cả các kết nối"""
+    def close(self):
+        """Đóng kết nối database an toàn"""
         try:
-            for conn in self.pool:
-                conn.close()
-            self.pool.clear()
-            if hasattr(self, 'conn'):
+            if hasattr(self, 'conn') and self.conn:
                 self.conn.close()
+                logger.info("Đã đóng kết nối database")
         except Exception as e:
-            logger.error(f"Lỗi đóng kết nối: {str(e)}", exc_info=True)
+            logger.error(f"Lỗi khi đóng database: {e}")
+            
+    def close_all(self):
+        """Đóng tất cả kết nối (alias cho close)"""
+        self.close()
 
     def add_reminder(self, title: str, description: str, due_date: str, priority: str = "medium") -> int:
         """Thêm reminder mới"""
@@ -495,6 +630,34 @@ class DatabaseManager:
         except Exception as e:
             logger.error(f"Lỗi lấy lịch sử khởi chạy: {str(e)}")
             raise DatabaseError("Không thể lấy lịch sử khởi chạy", "DB_GET_ERROR", {"details": str(e)})
+
+    def get_schedule_for_day(self, day_of_week: str):
+        """Lấy lịch trình cho một ngày trong tuần (ví dụ: 'Monday', 'Tuesday', ...)."""
+        try:
+            with self.transaction() as conn:
+                cursor = conn.cursor()
+                cursor.execute('''
+                    SELECT * FROM schedule WHERE day_of_week = ? ORDER BY start_time
+                ''', (day_of_week,))
+                return [dict(row) for row in cursor.fetchall()]
+        except Exception as e:
+            logger.error(f"Lỗi lấy lịch trình cho ngày {day_of_week}: {str(e)}")
+            return []
+
+    def get_recent_applications(self, limit: int = 5) -> List[Dict[str, Any]]:
+        """Lấy danh sách ứng dụng gần đây"""
+        try:
+            with self.transaction() as conn:
+                cursor = conn.cursor()
+                cursor.execute('''
+                    SELECT * FROM app_launches 
+                    ORDER BY launch_time DESC 
+                    LIMIT ?
+                ''', (limit,))
+                return [dict(row) for row in cursor.fetchall()]
+        except Exception as e:
+            logger.error(f"Lỗi lấy danh sách ứng dụng gần đây: {str(e)}")
+            return []
 
     @contextmanager
     def transaction(self):

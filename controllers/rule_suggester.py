@@ -99,4 +99,22 @@ class RuleSuggester:
                     "actions": actions
                 })
         logger.info(f"Đã đề xuất {len(suggested_rules)} quy tắc mới.")
-        return suggested_rules 
+        return suggested_rules
+
+    def infer_rules(self, facts: dict) -> list:
+        """Suy luận quy tắc dựa trên facts hiện tại. Đây là alias cho suggest_rules để tương thích."""
+        logger.info("Bắt đầu suy luận quy tắc từ facts...")
+        
+        # Sử dụng InferenceEngine để chạy suy luận
+        from controllers.inference_engine import InferenceEngine
+        inference_engine = InferenceEngine(self.knowledge_base)
+        results = inference_engine.run_inference(facts)
+        
+        # Chuyển đổi kết quả thành danh sách recommendations
+        recommendations = []
+        for result in results:
+            if result.get('type') == 'recommendation':
+                recommendations.append(result.get('message', ''))
+        
+        logger.info(f"Đã suy luận được {len(recommendations)} recommendations")
+        return recommendations 
