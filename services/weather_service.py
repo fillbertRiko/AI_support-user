@@ -59,7 +59,13 @@ class WeatherService:
                     'temperature': data['main']['temp'],
                     'description': data['weather'][0]['description'],
                     'humidity': data['main']['humidity'],
-                    'wind_speed': data['wind']['speed']
+                    'wind_speed': data['wind']['speed'],
+                    'pressure': data['main'].get('pressure', None),
+                    'visibility': data.get('visibility', None),
+                    'dew_point': data['main'].get('temp_min', None),  # Sử dụng temp_min làm dew_point tạm thời
+                    'feels_like': data['main'].get('feels_like', None),
+                    'temp_min': data['main'].get('temp_min', None),
+                    'temp_max': data['main'].get('temp_max', None)
                 }
                 
                 # Lưu vào cache
@@ -124,16 +130,31 @@ class WeatherService:
         try:
             self.db.execute_query(
                 """
-                INSERT INTO weather_data (city, temperature, description, humidity, wind_speed)
-                VALUES (?, ?, ?, ?, ?)
+                INSERT INTO weather_data (city, temperature, description, humidity, wind_speed, pressure, visibility, dew_point, feels_like, temp_min, temp_max)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """,
                 (
                     weather_data['city'],
                     weather_data['temperature'],
                     weather_data['description'],
                     weather_data['humidity'],
-                    weather_data['wind_speed']
+                    weather_data['wind_speed'],
+                    weather_data.get('pressure'),
+                    weather_data.get('visibility'),
+                    weather_data.get('dew_point'),
+                    weather_data.get('feels_like'),
+                    weather_data.get('temp_min'),
+                    weather_data.get('temp_max')
                 )
             )
         except Exception as e:
-            self.logger.error(f"Lỗi khi lưu vào database: {str(e)}", exc_info=True) 
+            self.logger.error(f"Lỗi khi lưu vào database: {str(e)}", exc_info=True)
+
+    def close(self):
+        """Đóng service an toàn"""
+        try:
+            # Đóng các kết nối nếu có
+            if hasattr(self, 'session') and self.session:
+                self.session.close()
+        except Exception as e:
+            logger.error(f"Lỗi khi đóng WeatherService: {e}") 
