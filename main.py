@@ -28,27 +28,13 @@ from services.fact_collector import FactCollector
 
 # Thiết lập logging
 def setup_logging():
-    log_dir = "logs"
-    if not os.path.exists(log_dir):
-        os.makedirs(log_dir)
-        
-    log_file = os.path.join(log_dir, "app.log")
-    
-    # Đóng tất cả handlers hiện tại
+    # Không tạo log file, chỉ log ra console hoặc tắt hoàn toàn
     for handler in logging.getLogger().handlers[:]:
         handler.close()
         logging.getLogger().removeHandler(handler)
-    
-    # Thiết lập logging mới với encoding UTF-8
-    logging.basicConfig(
-        level=logging.DEBUG,
-        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-        handlers=[
-            logging.FileHandler(log_file, encoding='utf-8', mode='a'),
-            # Sử dụng StreamHandler với encoding UTF-8 cho console
-            logging.StreamHandler(open(os.devnull, 'w', encoding='utf-8'))
-        ]
-    )
+    # Nếu muốn tắt hoàn toàn:
+    logging.disable(logging.CRITICAL)
+    # Nếu muốn giữ log ra console, bỏ dòng trên và dùng StreamHandler ra sys.stdout
 
 # Thiết lập theme cho CustomTkinter
 ctk.set_appearance_mode("dark")
@@ -397,15 +383,8 @@ def main():
         # Thiết lập logging
         setup_logging()
         logger = logging.getLogger(__name__)
-        
-        # Ghi log startup vào file riêng với encoding UTF-8
-        try:
-            with open("startup_log.txt", "a", encoding="utf-8") as f:
-                f.write(f"{datetime.now()} - Starting MyAI application.\n")
-        except PermissionError:
-            logger.warning("Không thể ghi file startup_log.txt - thiếu quyền")
-        
-        logger.info("Khởi động ứng dụng MyAI...")
+        # Không ghi log startup vào file nữa
+        # logger.info("Khởi động ứng dụng MyAI...")
         
         # Kiểm tra kết nối internet
         if not check_internet_connection():

@@ -1,18 +1,2 @@
-18/06/2025 13:37:05,31 - Starting MyAI application. 
-18/06/2025 13:37:29,51 - ERROR: MyAI application failed to start. 
-2025-06-18 13:45:02.460628 - Starting MyAI application.
-2025-06-18 13:46:37.292375 - Starting MyAI application.
-2025-06-18 13:46:53.691673 - Starting MyAI application.
-2025-06-18 13:48:30.210772 - Starting MyAI application.
-2025-06-18 13:52:32.187354 - Starting MyAI application.
-2025-06-18 13:55:50.531030 - Starting MyAI application.
-2025-06-18 13:59:02.628810 - Starting MyAI application.
-2025-06-18 21:54:07.089174 - Starting MyAI application.
-2025-06-18 21:57:56.160963 - Starting MyAI application.
-2025-06-18 22:00:36.594213 - Starting MyAI application.
-2025-06-18 22:05:40.971354 - Starting MyAI application.
-2025-06-18 22:07:32.359832 - Starting MyAI application.
-2025-06-18 22:11:16.098893 - Starting MyAI application.
-2025-06-18 22:12:02.079814 - Starting MyAI application.
-2025-06-18 22:14:13.009690 - Starting MyAI application.
-2025-06-18 22:15:47.428947 - Starting MyAI application.
+19/06/2025 13:23:11,25 - Starting MyAI application. 
+19/06/2025 13:24:05,12 - MyAI application started successfully. 

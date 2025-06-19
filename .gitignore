@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Database files
+data/*.db
+data/*.db-*
+data/database/*.db
+*.sqlite3
+
+# Log files
+logs/
+*.log
+*.log.*
+startup_log.txt
+app_log.txt
+
+# Cache
+cache/
+data/cache/
+
+# Excel/CSV data
+*.xlsx
+*.csv
+
+# Environment files
+.env
+.env.*
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Test outputs
+*.coverage
+*.pytest_cache/
+
+# VSCode
+.vscode/
+
+# Others
+*.bak
+*.swp
+*.swo
+
+# Ignore compiled files
+*.so
+*.dll
+*.exe
+*.out
+
+# Ignore backup files
+*~
+
+# Ignore requirements lock
+poetry.lock
+Pipfile.lock 

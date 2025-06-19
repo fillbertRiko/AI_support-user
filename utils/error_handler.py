@@ -47,50 +47,15 @@ class ErrorHandler:
             "traceback": traceback.format_exc(),
             "context": context or {}
         }
-
-        # Ghi log lỗi
-        logger.error(f"Error occurred: {error_data['message']}")
-        logger.debug(f"Error details: {json.dumps(error_data, indent=2)}")
-
-        # Lưu vào file
-        self._save_error_log(error_data)
-
-        # Xử lý lỗi dựa trên loại
-        if isinstance(error, DatabaseError):
-            self._handle_database_error(error)
-        elif isinstance(error, NetworkError):
-            self._handle_network_error(error)
-        elif isinstance(error, ValidationError):
-            self._handle_validation_error(error)
-        elif isinstance(error, SecurityError):
-            self._handle_security_error(error)
-        else:
-            self._handle_unknown_error(error)
+        # Không ghi log lỗi ra file hoặc logger nữa
+        pass
+        # logger.error(f"Error occurred: {error_data['message']}")
+        # logger.debug(f"Error details: {json.dumps(error_data, indent=2)}")
+        # self._save_error_log(error_data)
 
     def _save_error_log(self, error_data: Dict[str, Any]) -> None:
-        """Lưu thông tin lỗi vào file"""
-        try:
-            # Đọc log hiện tại
-            existing_logs = []
-            if os.path.exists(self.error_log_file):
-                with open(self.error_log_file, "r") as f:
-                    try:
-                        existing_logs = json.load(f)
-                    except json.JSONDecodeError:
-                        existing_logs = []
-
-            # Thêm log mới
-            existing_logs.append(error_data)
-
-            # Giới hạn số lượng log
-            if len(existing_logs) > 1000:
-                existing_logs = existing_logs[-1000:]
-
-            # Lưu lại
-            with open(self.error_log_file, "w") as f:
-                json.dump(existing_logs, f, indent=2)
-        except Exception as e:
-            logger.error(f"Failed to save error log: {str(e)}")
+        """Không lưu thông tin lỗi vào file nữa"""
+        pass
 
     def _handle_database_error(self, error: DatabaseError) -> None:
         """Xử lý lỗi database"""
