@@ -80,11 +80,8 @@ class Config:
             logging.error(f"Error saving config: {str(e)}")
     
     def _setup_logging(self) -> None:
-        """Thiết lập logging dựa trên config"""
-        logging.basicConfig(
-            level=getattr(logging, self._config['logging']['level']),
-            format=self._config['logging']['format']
-        )
+        """Tắt logging ra file"""
+        logging.disable(logging.CRITICAL)
 
     def _deep_merge(self, dict1, dict2):
         for k, v in dict2.items():

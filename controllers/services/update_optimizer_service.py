@@ -4,7 +4,7 @@ from typing import Dict, Any, Optional
 import sqlite3
 from collections import defaultdict
 import numpy as np
-from ..core.database import DatabaseManager
+from models.database import DatabaseManager
 
 class UpdateOptimizerService:
     def __init__(self):
