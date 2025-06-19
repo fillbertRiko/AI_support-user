@@ -40,8 +40,21 @@ class ScheduleController:
 
     def get_schedule_data(self):
         """Lấy dữ liệu thời khóa biểu"""
-        return self.schedule_model.get_schedule()
+        return self.schedule_model.get_schedule_from_excel()
 
     def update_schedule_data(self, data):
         """Cập nhật dữ liệu thời khóa biểu"""
         return self.schedule_model.update_schedule(data) 
+    
+    def save_schedule_to_db(self, df):
+        #xoa toan bo du lieu cu
+        with self.db.transaction() as conn:
+            #cot dau la thoi gian, cac cot sau la cac ngay
+            for i, row in df.iterrows():
+                time_slot = row['Thời gian']
+                for day in df.columns[1:]:
+                    subject = row[day]
+                    conn.execute(
+                        "INSERT INTO schedule (day_of_week, start_time, end_time, subject, location) VALUES (?, ?, ?, ?, ?)",
+                        (day, time_slot.split('-')[0].strip(), time_slot.split('-')[1].strip(), subject, "")
+                    )

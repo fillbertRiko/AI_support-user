@@ -25,6 +25,7 @@ from services.weather_service import WeatherService
 from services.gemini_error_correction_service import GeminiErrorCorrectionService
 from services.error_correction_service import ErrorCorrectionService
 from services.fact_collector import FactCollector
+import tkinter as tk
 
 # Thiết lập logging
 def setup_logging():
@@ -82,10 +83,24 @@ def update_background_color(root):
         if isinstance(widget, (ctk.CTkLabel, ctk.CTkButton)):
             widget.configure(text_color=text_color)
 
+
+
 class MainWindow(ctk.CTk):
     def __init__(self):
         super().__init__()
         self.logger = logging.getLogger(__name__)
+        # Đặt kích thước cửa sổ bằng 2/5 màn hình (so với 1920x1080)
+        screen_width = self.winfo_screenwidth()
+        screen_height = self.winfo_screenheight()
+        window_width = int(screen_width * 2 / 5)
+        window_height = int(screen_height * 2 / 5)
+        print(f"Window size: {window_width}x{window_height}")  # Thêm dòng này để kiểm tra
+        self.geometry(f"{window_width}x{window_height}")
+        self.minsize(400, 300)
+        self.title("MyAI - Trợ lý thông minh")
+        # Đảm bảo các frame con co giãn đồng bộ
+        self.grid_rowconfigure(0, weight=1)
+        self.grid_columnconfigure(0, weight=1)
         
         try:
             # Khởi tạo database
@@ -106,6 +121,9 @@ class MainWindow(ctk.CTk):
             
             # Bắt đầu suy luận hệ chuyên gia
             self._run_expert_system_inference()
+
+            # Gửi facts lên Gemini và hiển thị đề xuất khi khởi động
+            self.show_gemini_suggestion()
             
         except Exception as e:
             self.logger.error(f"Lỗi khởi tạo MainWindow: {str(e)}", exc_info=True)
@@ -202,6 +220,22 @@ class MainWindow(ctk.CTk):
                 self.logger.error(f"Error in _update_time: {e}", exc_info=True)
         else:
             self.logger.warning("greeting_frame không tồn tại khi gọi _update_time.")
+
+    def show_gemini_suggestion(self):
+        try:
+            facts = self.fact_collector.collect_all_facts()
+            suggestion = self.gemini_service.get_suggestion_from_facts(facts)
+            if hasattr(self, 'recommendation_label'):
+                self.recommendation_label.configure(text=f"Đề xuất từ Gemini: {suggestion}")
+            else:
+                self.recommendation_label = ctk.CTkLabel(self, text=f"Đề xuất từ Gemini: {suggestion}", font=("Montserrat", 14, "bold"))
+                self.recommendation_label.pack(pady=10)
+        except Exception as e:
+            if hasattr(self, 'recommendation_label'):
+                self.recommendation_label.configure(text=f"Lỗi khi lấy đề xuất từ Gemini: {e}")
+            else:
+                self.recommendation_label = ctk.CTkLabel(self, text=f"Lỗi khi lấy đề xuất từ Gemini: {e}", font=("Montserrat", 14, "bold"))
+                self.recommendation_label.pack(pady=10)
 
     def update_colors(self):
         if self.winfo_exists():
