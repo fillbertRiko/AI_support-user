@@ -2,7 +2,7 @@ import customtkinter as ctk
 import logging
 import pandas as pd
 from controllers.schedule_controller import ScheduleController
-from tkinter import messagebox
+from tkinter import messagebox, filedialog
 
 logger = logging.getLogger(__name__)
 
@@ -27,17 +27,17 @@ class ScheduleFrame(ctk.CTkFrame):
         )
         self.title_label.grid(row=0, column=0, columnspan=8, pady=10, sticky="ew") # Căn giữa tiêu đề
         
-        # Nút mở file (Tạm thời bỏ qua vì dữ liệu hardcode)
-        # self.open_button = ctk.CTkButton(
-        #     self,
-        #     text="Mở File Thời Khóa Biểu",
-        #     command=self.open_schedule
-        # )
-        # self.open_button.pack(pady=5)
+        # Nút import file Excel
+        self.import_button = ctk.CTkButton(
+            self,
+            text="Import file Excel",
+            command=self.import_excel
+        )
+        self.import_button.grid(row=1, column=0, columnspan=8, pady=(0, 10), sticky="ew")
         
         # Frame chứa bảng thời khóa biểu
         self.table_frame = ctk.CTkFrame(self, fg_color="#2b2b2b") # Màu nền tối cho bảng
-        self.table_frame.grid(row=1, column=0, sticky="nsew", padx=10, pady=10)
+        self.table_frame.grid(row=2, column=0, sticky="nsew", padx=10, pady=10)
         
         # Cấu hình grid cho table_frame
         for i in range(8): # 8 cột: Thời gian + 7 ngày
@@ -48,10 +48,23 @@ class ScheduleFrame(ctk.CTkFrame):
         # Hiển thị dữ liệu
         self.display_schedule()
         
-    def open_schedule(self):
-        """Mở file thời khóa biểu - Không sử dụng khi hardcode data"""
-        messagebox.showinfo("Thông báo", "Tính năng mở file đang tạm thời vô hiệu hóa (dữ liệu hardcode).")
-            
+    def import_excel(self):
+        """Cho phép người dùng chọn file Excel và cập nhật thời khoá biểu"""
+        file_path = filedialog.askopenfilename(
+            title="Chọn file Excel thời khoá biểu",
+            filetypes=[("Excel files", "*.xlsx *.xls")]
+        )
+        if file_path:
+            try:
+                df = pd.read_excel(file_path, engine='openpyxl')
+                # Lưu file vào đúng vị trí app sử dụng
+                df.to_excel(self.controller.schedule_model.schedule_file, index=False, engine='openpyxl')
+                self.controller.save_schedule_to_db(df)
+                messagebox.showinfo("Thành công", "Đã import file thời khoá biểu thành công!")
+                self.display_schedule()
+            except Exception as e:
+                messagebox.showerror("Lỗi", f"Không thể import file: {e}")
+        
     def display_schedule(self):
         """Hiển thị dữ liệu thời khóa biểu"""
         schedule_data = self.controller.get_schedule_data()

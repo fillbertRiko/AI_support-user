@@ -107,3 +107,61 @@ class FactCollector:
             facts['weather_condition'] = 'unknown'
             
         return facts 
+
+    def collect_all_facts(self):
+        """Thu thập facts tổng hợp từ lịch, thời tiết, VSCode..."""
+        facts = {}
+        try:
+            # Lấy facts lịch trình
+            day_of_week = datetime.now().strftime('%A')
+            schedule = self.db.get_schedule_for_day(day_of_week)
+            if schedule:
+                facts['has_schedule'] = True
+                facts['schedule_count'] = len(schedule)
+                gym_activities = [s for s in schedule if 'gym' in str(s.get('activity', '')).lower() or 'tập' in str(s.get('activity', '')).lower()]
+                if gym_activities:
+                    facts['schedule_activity'] = 'Gym'
+                else:
+                    facts['schedule_activity'] = 'Other'
+            else:
+                facts['has_schedule'] = False
+                facts['schedule_count'] = 0
+                facts['schedule_activity'] = 'None'
+            # Lấy facts thời tiết
+            if hasattr(self, 'weather_service') and self.weather_service:
+                weather_data = self.weather_service.get_weather()
+                if weather_data and 'description' in weather_data:
+                    description = weather_data['description'].lower()
+                    if 'mưa' in description:
+                        facts['weather_condition'] = 'mưa'
+                    elif 'nắng' in description or 'trời quang' in description:
+                        facts['weather_condition'] = 'nắng'
+                    else:
+                        facts['weather_condition'] = description
+                else:
+                    facts['weather_condition'] = 'unknown'
+            else:
+                facts['weather_condition'] = 'unknown'
+            # Lấy facts VSCode
+            recent_apps = self.db.get_recent_applications(limit=5) if hasattr(self.db, 'get_recent_applications') else []
+            if recent_apps:
+                app_names = []
+                for app in recent_apps:
+                    if isinstance(app, dict):
+                        if 'name' in app:
+                            app_names.append(app['name'])
+                        elif 'launch_time' in app:
+                            app_names.append(f"App_{app['launch_time']}")
+                        else:
+                            app_names.append(str(app))
+                    else:
+                        app_names.append(str(app))
+                facts['recent_apps'] = app_names
+                vscode_running = any('vscode' in app.lower() or 'code' in app.lower() for app in app_names)
+                facts['vscode_status'] = 'open' if vscode_running else 'closed'
+            else:
+                facts['recent_apps'] = []
+                facts['vscode_status'] = 'closed'
+        except Exception as e:
+            self.logger.error(f"Lỗi khi thu thập facts tổng hợp: {e}", exc_info=True)
+        return facts 

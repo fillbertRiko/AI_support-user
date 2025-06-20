@@ -6,7 +6,7 @@ import sys
 import win32com.client # Import for Task Scheduler interaction
 from typing import Optional
 
-from ..core.database import DatabaseManager
+from models.database import DatabaseManager
 
 class SchedulerService:
     def __init__(self):

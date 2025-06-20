@@ -97,3 +97,10 @@ class Schedule:
         """Cập nhật dữ liệu thời khóa biểu - Không sử dụng khi hardcode data"""
         logger.warning("Schedule update method is not active as data is hardcoded.")
         return False 
+    
+    def get_schedule_from_excel(self) ->pd.DataFrame:
+        """Read schedule data from Excel file."""
+        if os.path.exists(self.schedule_file):
+            return pd.read_excel(self.schedule_file, engine='openpyxl')
+        else:
+            return pd.DataFrame()  # Trả về DataFrame rỗng nếu file không tồn tại
