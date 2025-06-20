@@ -97,7 +97,7 @@ class MainWindow(ctk.CTk):
         print(f"Window size: {window_width}x{window_height}")  # Thêm dòng này để kiểm tra
         self.geometry(f"{window_width}x{window_height}")
         self.minsize(400, 300)
-        self.title("MyAI - Trợ lý thông minh")
+        self.title("Tôi là JAME! xin chào boss!")
         # Đảm bảo các frame con co giãn đồng bộ
         self.grid_rowconfigure(0, weight=1)
         self.grid_columnconfigure(0, weight=1)

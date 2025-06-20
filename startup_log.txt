@@ -1,2 +1,3 @@
-19/06/2025 13:23:11,25 - Starting MyAI application. 
-19/06/2025 13:24:05,12 - MyAI application started successfully. 
+20/06/2025 18:28:27,42 - Starting MyAI application. 
+Window size: 614x345
+20/06/2025 18:29:04,39 - MyAI application started successfully. 

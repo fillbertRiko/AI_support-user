@@ -57,6 +57,21 @@ class ScheduleFrame(ctk.CTkFrame):
         if file_path:
             try:
                 df = pd.read_excel(file_path, engine='openpyxl')
+                # Map tên cột từ file của bạn sang tên chuẩn app
+                column_map = {
+                    "Thứ 2": "Thứ Hai",
+                    "Thứ 3": "Thứ Ba",
+                    "Thứ 4": "Thứ Tư",
+                    "Thứ 5": "Thứ Năm",
+                    "Thứ 6": "Thứ Sáu",
+                    "Thứ 7": "Thứ Bảy"
+                    # "Chủ Nhật" và "Thời gian" đã đúng, không cần đổi
+                }
+                df = df.rename(columns=column_map)
+                # Kiểm tra đủ cột chưa
+                required_columns = ["Thời gian", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy", "Chủ Nhật"]
+                if not all(col in df.columns for col in required_columns):
+                    raise ValueError("File Excel không đúng định dạng, thiếu cột!")
                 # Lưu file vào đúng vị trí app sử dụng
                 df.to_excel(self.controller.schedule_model.schedule_file, index=False, engine='openpyxl')
                 self.controller.save_schedule_to_db(df)
